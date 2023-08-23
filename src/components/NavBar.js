@@ -28,9 +28,18 @@ const NavBar = () => {
         setMobileOpen((prevState) => !prevState);
     };
 
+    const handleNavigation = (name) => {
+        if (name === "Home"){
+            navigate("/")
+        }
+        else{
+            navigate("/" + name.toLowerCase())
+        }
+        setPage(name)
+    }
+
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor: "rgb(29,35,42)", height:"100%" }}>
-            
             <Typography 
                 variant="h6"
                 sx={{ 
@@ -39,30 +48,23 @@ const NavBar = () => {
                     cursor: "pointer"
                 }}
                 onClick={
-                    () => {
-                        console.log("pageBefore: ", page)
-                        setPage("Home");
-                        console.log("pageAfter: ", page)
-                        navigate("/")
-                    }
+                    () => handleNavigation("Home")
                 }
             >
                 Mayank Tamakuwala
             </Typography>
             <Divider sx={{backgroundColor:"white"}}/>
             <List>
-                {navItems.map((item) => (
-                    <ListItem key={item} >
+                {navItems.map((item, index) => (
+                    <ListItem key={index} >
                         <ListItemButton 
                             sx={{ 
                                 textAlign: 'center', 
-                                color: "white"
-                            }} 
+                                color: "white",
+                                borderRadius: 2,
+                            }}
                             onClick={
-                                () => {
-                                    setPage(item)
-                                    navigate("/"+item.toLowerCase())
-                                }
+                                () => handleNavigation(item)
                             }
                         >
                             <ListItemText primary={item} />
@@ -99,32 +101,25 @@ const NavBar = () => {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, cursor: "pointer"}}
                         onClick={
-                            () => {
-                                setPage("Home")
-                                navigate("/")
-                            }
+                            () => handleNavigation("Home")
                         }
                     >
                         Mayank Tamakuwala
                     </Typography>
                     <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ display: { sm: 'none' }}}
+                        variant="h5"
+                        sx={{ flexGrow: 1, display: { sm: 'none' }}}
                     >
                         {page}
                     </Typography>
 
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        {navItems.map((item) => (
+                        {navItems.map((item, index) => (
                             <Button
-                                key={item}
-                                sx={{ color: '#fff' }}
+                                key={index}
+                                sx={{ color: '#fff', borderRadius: 2 }}
                                 onClick={
-                                    () => {
-                                        navigate("/" + item.toLowerCase())
-                                        setPage(item)
-                                    }
+                                    () => handleNavigation(item)
                                 }
                             >
                                 {item}

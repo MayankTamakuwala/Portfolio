@@ -748,6 +748,13 @@ html {
   --tw-backdrop-sepia:  ;
 }
 
+@media (hover:hover) {
+  .label a:hover {
+    --tw-text-opacity: 1;
+    color: hsl(var(--bc) / var(--tw-text-opacity));
+  }
+}
+
 .card {
   position: relative;
   display: flex;
@@ -844,6 +851,18 @@ html {
   }
 }
 
+.label {
+  display: flex;
+  -webkit-user-select: none;
+          user-select: none;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .progress {
   position: relative;
   width: 100%;
@@ -853,6 +872,11 @@ html {
   height: 0.5rem;
   background-color: hsl(var(--bc) / 0.2);
   border-radius: var(--rounded-box, 1rem);
+}
+
+.btm-nav > * .label {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .btn.glass {
