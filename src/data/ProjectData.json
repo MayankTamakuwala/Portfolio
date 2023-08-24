@@ -21,11 +21,11 @@
         "name": "BeachMuse",
         "line1": "Designed a website for the <b>2023 BeachHacks hackathon</b> that can help a large crowd collaborate and explore new songs in the music world by adding their choice of songs into a single collaborative queue.",
         "line2": "Built reusable front-end components such as Now Playing, Navigation Bar, Queue system, and Search functionality using <b>JavaScript, ReactJS, ExpressJS, MaterialUI,</b> and various available <b>Spotify APIs.</b>",
-        "line3": "Collaborated with a team of 7 members for the development of this application within the projected time of 4 months"
+        "line3": "Collaborated with a team of 7 members for the development of this application within the projected time of 4 months."
     },
     {
         "name": "EazMeet",
-        "line1": "Developed a mobile application that finds feasible meeting places between two locations using the user’s input location and the user’s present location",
+        "line1": "Developed a mobile application that finds feasible meeting places between two locations using the user’s input location and the user’s present location.",
         "line2": "Provides the user with the top ten possible locations and has options for choosing from the available filters as well, giving the user the freedom to choose the kind of location they want.",
         "line3": "Applied front-end components of the amazing user experience for <b>Android</b> and <b>iOS</b> were built using the <b>React-Native</b> framework, and <b>TomTom’s Search and Places API</b> was used to get the reviews and photographs of the locations."
     }
