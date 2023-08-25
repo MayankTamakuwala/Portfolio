@@ -24,25 +24,7 @@ const ExperienceTabs = ({ value, handleChange }) => {
                 }}
                 TabIndicatorProps={{ style: { display: "none" } }}
             >
-                <Tab value={1} label="Education" aria-label="Education" sx={{
-                    color: "white", borderRadius: "0 0 15px 15px", fontSize: { xs: "12px" }, borderWidth: 0,
-                    "&.Mui-selected, &.Mui-selected:hover": {
-                        color: "white",
-                        backgroundColor: 'rgb(52, 63,77)'
-                    }
-                }}
-                />
-
-                <Tab value={2} label={"Work Experience"} aria-label="Work Experience" sx={{
-                    color: "white", borderRadius: "0 0 15px 15px", fontSize: { xs: "12px" }, borderWidth: 0,
-                    "&.Mui-selected, &.Mui-selected:hover": {
-                        color: "white",
-                        backgroundColor: 'rgb(52, 63,77)'
-                    }
-                }} />
-
-
-                <Tab label="Projects" value={3} aria-label="Projects" sx={{
+                <Tab label="Projects" value={1} aria-label="Projects" sx={{
                     color: "white", borderRadius: "0 0 15px 15px", fontSize: { xs: "12px" }, borderWidth: 0,
                     "&.Mui-selected, &.Mui-selected:hover": {
                         color: "white",
@@ -50,6 +32,23 @@ const ExperienceTabs = ({ value, handleChange }) => {
                         borderWidth: 0
                     }
                 }} />
+
+                <Tab value={2} label={"Education"} aria-label="Education" sx={{
+                    color: "white", borderRadius: "0 0 15px 15px", fontSize: { xs: "12px" }, borderWidth: 0,
+                    "&.Mui-selected, &.Mui-selected:hover": {
+                        color: "white",
+                        backgroundColor: 'rgb(52, 63,77)'
+                    }
+                }} />
+
+                <Tab value={3} label="Work Experience" aria-label="Work Experience" sx={{
+                    color: "white", borderRadius: "0 0 15px 15px", fontSize: { xs: "12px" }, borderWidth: 0,
+                    "&.Mui-selected, &.Mui-selected:hover": {
+                        color: "white",
+                        backgroundColor: 'rgb(52, 63,77)'
+                    }
+                }}
+                />
 
             </Tabs>
         </AppBar>

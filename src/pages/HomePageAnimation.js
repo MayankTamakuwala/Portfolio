@@ -1,12 +1,9 @@
-// PageAnimation.js 
 import React, { useEffect } from 'react';
 
-const PageAnimation = ({image}) => {
+const PageAnimation = () => {
     useEffect(() => {
         const hero = document.querySelector('.hero');
         const slider = document.querySelector('.slider');
-        const logo = document.querySelector('#logo');
-        const hamburger = document.querySelector('.hamburger');
 
         const tl = new window.TimelineMax();
 
@@ -31,42 +28,18 @@ const PageAnimation = ({image}) => {
                 { x: '0%', ease: window.Power2.easeInOut },
                 '-=1.2'
             )
-
-            .fromTo(
-                logo,
-                0.5,
-                { opacity: 0, x: 30 },
-                { opacity: 1, x: 0 },
-                '-=0.5'
-            )
-
-            .fromTo(
-                hamburger,
-                0.5,
-                { opacity: 0, x: 30 },
-                { opacity: 1, x: 0 },
-                '-=0.5'
-            );
     }, []);
 
     return (
         <>
             <header>
-                <nav>
-                    <h3 id="logo">Dream Vacation</h3>
-                    <img
-                        className="hamburger"
-                        src={image}
-                        alt="hamburger"
-                    />
-                </nav>
-                <section>
+                <section className="sectionBodyHome">
                     <div className="hero">
                         <img
-                            src={image}
+                            className='imgHome'
+                            src={require("../assets/projects/img.jpeg")}
                             alt="family"
                         />
-                        <h1 className="headline">Dream Big</h1>
                     </div>
                 </section>
             </header>

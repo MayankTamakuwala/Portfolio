@@ -1,27 +1,3 @@
-// import { BrowserRouter, createBrowserRouter, Route, Routes } from "react-router-dom";
-// import "./App.css";
-// import NavBar from "./NavBar";
-// import Projects from "./Experiences";
-// import Home from "./Home";
-// import Experiences from "./Experiences";
-
-
-// const App = () => {
-//   return(
-//     <main>
-//       <NavBar />
-//       <BrowserRouter>
-//         <Routes>
-//           <Route path="/" element={<Home/>} />
-//           <Route path="/Experience" element={<Experiences />} />
-//         </Routes>
-//       </BrowserRouter>
-//     </main>
-//   )
-// }
-
-// export default App;
-
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 

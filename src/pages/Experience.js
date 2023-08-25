@@ -26,8 +26,8 @@ const Projects = ({ data }) => {
     const y = useParallax(scrollYProgress, 300);
 
     return (
-        <section className="sectionBodyExp card lg:card-side">
-            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv" style={{width: "50%"}}>
+        <section className="sectionBodyExp card lg:card-side pt-32 lg:pt-0">
+            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv" style={{width: "50%", backgroundColor: "white"}}>
                 <img
                     src={require(`/src/assets/projects/${data.name}.png`)} 
                     alt={data.name} 
@@ -35,8 +35,8 @@ const Projects = ({ data }) => {
                     style={{ objectFit: "fill", borderRadius: 40}}
                 />
             </div>
-            <motion.div style={{ y }} 
-                className="card-body w-11/12 h-3/6 rounded-2xl glass"
+            <motion.div style={{ y, paddingTop: 10}} 
+                className="card-body w-11/12 h-fit rounded-2xl glass lg:mr-5"
             >
                 <div>
                     <p className="lg:text-6xl lg:font-semibold md:text-3xl md:font-medium text-xl" style={{margin:0}}> {data.name} </p>
@@ -44,7 +44,7 @@ const Projects = ({ data }) => {
                     <ol style={{ listStyleType: 'disc' }}>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs">{StringToHtml(data.line1)}</li>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs">{StringToHtml(data.line2)}</li>
-                        <li className="m-0 lg:text-lg md:text-sm text-xs">{StringToHtml(data.line3)}</li>
+                        <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5">{StringToHtml(data.line3)}</li>
                     </ol>
                 </div>
             </motion.div>
@@ -67,7 +67,7 @@ const Experience = () => {
     };
 
     return (
-        <>
+        <main style={{ backgroundColor: "rgb(52, 63, 77)",margin: 0, padding: 0, color: "white" }}>
             <ExperienceTabs value={tabValue} handleChange={handleChange}/>
             
             {tabValue === 1 ? 
@@ -79,7 +79,7 @@ const Experience = () => {
             }
 
             <motion.div className="progress" style={{ scaleX, margin: 0 }} />
-        </>
+        </main>
     );
 }
 
