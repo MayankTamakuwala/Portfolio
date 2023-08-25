@@ -863,6 +863,19 @@ html {
   padding-bottom: 0.5rem;
 }
 
+.hero {
+  display: grid;
+  width: 100%;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
 .progress {
   position: relative;
   width: 100%;
@@ -1229,12 +1242,8 @@ html {
   margin: 0px;
 }
 
-.mt-0 {
-  margin-top: 0px;
-}
-
-.mt-28 {
-  margin-top: 7rem;
+.mt-40 {
+  margin-top: 10rem;
 }
 
 .block {
@@ -1245,8 +1254,8 @@ html {
   display: flex;
 }
 
-.w-1\/2 {
-  width: 50%;
+.h-3\/6 {
+  height: 50%;
 }
 
 .w-11\/12 {
@@ -1271,9 +1280,9 @@ html {
   line-height: 1rem;
 }
 
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1324,6 +1333,17 @@ code {
   }
 }
 
+@media (min-width: 640px) {
+  .sm\:mt-40 {
+    margin-top: 10rem;
+  }
+
+  .sm\:snap-none {
+    -webkit-scroll-snap-type: none;
+            scroll-snap-type: none;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:text-3xl {
     font-size: 1.875rem;
@@ -1345,12 +1365,12 @@ code {
     margin-bottom: 1.25rem;
   }
 
-  .lg\:mt-28 {
-    margin-top: 7rem;
+  .lg\:mt-40 {
+    margin-top: 10rem;
   }
 
-  .lg\:pt-20 {
-    padding-top: 5rem;
+  .lg\:snap-center {
+    scroll-snap-align: center;
   }
 
   .lg\:text-6xl {
