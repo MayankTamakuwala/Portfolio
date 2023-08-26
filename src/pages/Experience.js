@@ -29,7 +29,8 @@ const Projects = ({ data }) => {
         <section className="sectionBodyExp card lg:card-side pt-32 lg:pt-0">
             <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv" style={{width: "50%", backgroundColor: "white"}}>
                 <img
-                    src={require(`/src/assets/projects/${data.name}.png`)} 
+                    src={require(`/src/assets/projects/${data.name}.png`)}
+                    loading="lazy"
                     alt={data.name} 
                     className="p-5 imgTag"
                     style={{ objectFit: "fill", borderRadius: 40}}

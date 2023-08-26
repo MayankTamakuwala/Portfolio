@@ -13,7 +13,6 @@ const ExperienceTabs = ({ value, handleChange }) => {
         >
             <Tabs
                 value={value}
-                exclusive
                 onChange={handleChange}
                 aria-label="Experiences"
                 sx={{

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 const navItems = ["Skills", "Experience", 'Resume', 'Contact'];
@@ -20,6 +20,7 @@ const navItems = ["Skills", "Experience", 'Resume', 'Contact'];
 const NavBar = () => {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [mobileOpen, setMobileOpen] = useState(false);
     const [page, setPage] = useState("Home")
@@ -35,8 +36,27 @@ const NavBar = () => {
         else{
             navigate("/" + name.toLowerCase())
         }
-        setPage(name)
     }
+
+    console.log(location)
+
+    useEffect(()=>{
+        if (location.pathname === "/") {
+            setPage("Home")
+        }
+        else if (location.pathname === "/skills") {
+            setPage("Skills")
+        }
+        else if (location.pathname === "/experience") {
+            setPage("Experience")
+        }
+        else if(location.pathname === "/resume"){
+            setPage("Resume")
+        }
+        else if (location.pathname === "/contact") {
+            setPage("Contact")
+        }
+    },[location])
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor: "rgb(29,35,42)", height:"100%" }}>
@@ -96,23 +116,25 @@ const NavBar = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, cursor: "pointer"}}
-                        onClick={
-                            () => handleNavigation("Home")
-                        }
-                    >
-                        Mayank Tamakuwala
-                    </Typography>
-                    <Typography
-                        variant="h5"
-                        sx={{ flexGrow: 1, display: { sm: 'none' }}}
-                    >
-                        {page}
-                    </Typography>
-
+                    <div style={{ flexGrow: 1 }}>
+                        <Typography
+                            variant="h6"
+                            // component="div"
+                            sx={{  display: { xs: 'none', sm: 'block' }, cursor: "pointer", width:"max-content"}}
+                            onClick={
+                                () => handleNavigation("Home")
+                            }
+                        >
+                            Mayank Tamakuwala
+                        </Typography>
+                    
+                        <Typography
+                            variant="h5"
+                            sx={{ flexGrow: 1, display: { sm: 'none' }}}
+                        >
+                            {page}
+                        </Typography>
+                    </div>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item, index) => (
                             <Button
