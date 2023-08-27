@@ -27,8 +27,6 @@ const NavBar = () => {
         }
     }
 
-    console.log(location)
-
     useEffect(()=>{
         if (location.pathname === "/") {
             setPage("Home")
