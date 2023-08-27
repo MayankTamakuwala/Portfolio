@@ -1,7 +1,7 @@
 [
     {
       "key": "Programming Languages",
-      "values": [
+      "value": [
           {
               "name": "Python",
               "image": "../assets/skills/python.png",
@@ -41,7 +41,7 @@
     },
     {
       "key": "Database",
-      "values": [
+      "value": [
         {
           "name": "MongoDB",
           "image": "../assets/skills/mongodb.svg",
@@ -86,7 +86,7 @@
     },
     {
       "key": "Web Development",
-      "values": [
+      "value": [
         {
           "name": "Socket.io",
           "image": "../assets/skills/socket.svg",
