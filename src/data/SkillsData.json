@@ -158,5 +158,40 @@
         "reference": "https://tailwindcss.com"
       }
     ]
+  },
+  {
+    "key": "Software/Tool and Libraries",
+    "value": [
+      {
+        "name": "Matplotlib",
+        "image": "matplotlib",
+        "reference": "https://matplotlib.org/stable/index.html"
+      },
+      {
+        "name": "NumPy",
+        "image": "numpy",
+        "reference": "https://numpy.org"
+      },
+      {
+        "name": "Scikit-Learn",
+        "image": "sklearn",
+        "reference": "https://scikit-learn.org/stable/"
+      },
+      {
+        "name": "Pandas",
+        "image": "pandas",
+        "reference": "https://pandas.pydata.org"
+      },
+      {
+        "name": "Microsoft Office",
+        "image": "msOffice",
+        "reference": "https://www.office.com"
+      },
+      {
+        "name": "Jira",
+        "image": "jira",
+        "reference": "https://www.atlassian.com/software/jira?aceid=&adposition=&adgroup=136973856930&campaign=18440774103&creative=639487383004&device=c&keyword=jira&matchtype=e&network=g&placement=&ds_kids=p73335831609&ds_e=GOOGLE&ds_eid=700000001558501&ds_e1=GOOGLE&gclsrc=ds"
+      }
+    ]
   }
 ]
