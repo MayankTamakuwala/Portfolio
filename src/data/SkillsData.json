@@ -1,107 +1,162 @@
 [
-    {
-      "key": "Programming Languages",
-      "value": [
-          {
-              "name": "Python",
-              "image": "../assets/skills/python.png",
-              "reference": "https://www.python.org"
-          },
-          {
-            "name": "JavaScript",
-            "image": "../assets/skills/javascript.png",
-            "reference": "https://www.javascript.com"
-          },
-          {
-            "name": "Java",
-            "image": "../assets/skills/java.png",
-            "reference": "https://www.java.com/en/"
-          },
-          {
-            "name": "C++",
-            "image": "../assets/skills/C++.png",
-            "reference": "https://cplusplus.com"
-          },
-          {
-            "name": "C",
-            "image": "../assets/skills/C.png",
-            "reference": "https://en.wikipedia.org/wiki/C_(programming_language)"
-          },
-          {
-            "name": "Swift",
-            "image": "../assets/skills/swift.png",
-            "reference": "https://www.swift.org/documentation/"
-          },
-          {
-            "name": "Kotlin",
-            "image": "../assets/skills/kotlin.png",
-            "reference": "https://kotlinlang.org"
-          }
-      ]
-    },
-    {
-      "key": "Database",
-      "value": [
-        {
-          "name": "MongoDB",
-          "image": "../assets/skills/mongodb.svg",
-          "reference": "https://www.mongodb.com"
-        },
-        {
-          "name": "PostgreSQL",
-          "image": "../assets/skills/mongodb.svg",
-          "reference": "https://www.postgresql.org"
-        },
-        {
-          "name": "Amazon DynamoDB",
-          "image": "../assets/skills/DynamoDB.png",
-          "reference": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
-        },
-        {
-          "name": "Amazon RDS",
-          "image": "../assets/skills/rds.png",
-          "reference": "https://www.mongodb.com"
-        },
-        {
-          "name": "JAVA Persistence API(JPA)",
-          "image": "../assets/skills/JPA.png",
-          "reference": "https://en.wikipedia.org/wiki/Jakarta_Persistence"
-        },
-        {
-          "name": "Extensible Markup Language(XML)",
-          "image": "../assets/skills/XML.png",
-          "reference": "https://www.w3.org/XML/"
-        },
-        {
-          "name": "JavaScript Object Notation(JSON)",
-          "image": "../assets/skills/JSON.gif",
-          "reference": "https://www.json.org/json-en.html"
-        },
-        {
-          "name": "MySQL",
-          "image": "../assets/skills/mysql.svg",
-          "reference": "https://www.mysql.com"
-        }
-      ]
-    },
-    {
-      "key": "Web Development",
-      "value": [
-        {
-          "name": "Socket.io",
-          "image": "../assets/skills/socket.svg",
-          "reference": "https://socket.io"
-        },
-        {
-          "name": "NodeJS",
-          "image": "../assets/skills/NodeJS.svg",
-          "reference": "https://nodejs.org/en"
-        },
-        {
-          "name": "ReactJS",
-          "image": "../assets/skills/react.png",
-          "reference": "https://react.dev"
-        }
-      ]
-    }
+  {
+    "key": "Programming Languages",
+    "value": [
+      {
+        "name": "Python",
+        "image": "python",
+        "reference": "https://www.python.org"
+      },
+      {
+        "name": "JavaScript",
+        "image": "javascript",
+        "reference": "https://www.javascript.com"
+      },
+      {
+        "name": "Java",
+        "image": "java",
+        "reference": "https://www.java.com/en/"
+      },
+      {
+        "name": "C++",
+        "image": "C++",
+        "reference": "https://cplusplus.com"
+      },
+      {
+        "name": "C",
+        "image": "C",
+        "reference": "https://en.wikipedia.org/wiki/C_(programming_language)"
+      },
+      {
+        "name": "Swift",
+        "image": "swift",
+        "reference": "https://www.swift.org/documentation/"
+      },
+      {
+        "name": "Kotlin",
+        "image": "kotlin",
+        "reference": "https://kotlinlang.org"
+      }
+    ]
+  },
+  {
+    "key": "Database",
+    "value": [
+      {
+        "name": "MongoDB",
+        "image": "python",
+        "reference": "https://www.mongodb.com"
+      },
+      {
+        "name": "PostgreSQL",
+        "image": "postgresSQL",
+        "reference": "https://www.postgresql.org"
+      },
+      {
+        "name": "Amazon DynamoDB",
+        "image": "DynamoDB",
+        "reference": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+      },
+      {
+        "name": "Amazon RDS",
+        "image": "rds",
+        "reference": "https://www.mongodb.com"
+      },
+      {
+        "name": "JPA",
+        "image": "JPA",
+        "reference": "https://en.wikipedia.org/wiki/Jakarta_Persistence"
+      },
+      {
+        "name": "XML",
+        "image": "XML",
+        "reference": "https://www.w3.org/XML/"
+      },
+      {
+        "name": "JSON",
+        "image": "JSON",
+        "reference": "https://www.json.org/json-en.html"
+      },
+      {
+        "name": "MySQL",
+        "image": "mysql",
+        "reference": "https://www.mysql.com"
+      }
+    ]
+  },
+  {
+    "key": "Web Development",
+    "value": [
+      {
+        "name": "Socket.io",
+        "image": "socket",
+        "reference": "https://socket.io"
+      },
+      {
+        "name": "NodeJS",
+        "image": "nodeJS",
+        "reference": "https://nodejs.org/en"
+      },
+      {
+        "name": "ReactJS",
+        "image": "react",
+        "reference": "https://react.dev"
+      },
+      {
+        "name": "RESTful API",
+        "image": "restAPI",
+        "reference": "https://www.redhat.com/en/topics/api/what-is-a-rest-api"
+      },
+      {
+        "name": "HTML",
+        "image": "HTML",
+        "reference": "https://html.spec.whatwg.org"
+      },
+      {
+        "name": "CSS",
+        "image": "CSS",
+        "reference": "https://www.w3.org/TR/CSS/#css"
+      }
+    ]
+  },
+  {
+    "key": "Frameworks",
+    "value": [
+      {
+        "name": "SwiftUI",
+        "image": "swiftUI",
+        "reference": "https://developer.apple.com/xcode/swiftui/"
+      },
+      {
+        "name": "React Native",
+        "image": "reactNative",
+        "reference": "https://reactnative.dev"
+      },
+      {
+        "name": "ExpressJS",
+        "image": "expressJS",
+        "reference": "https://expressjs.com"
+      },
+      {
+        "name": "Django",
+        "image": "django",
+        "reference": "https://www.djangoproject.com"
+      },
+      {
+        "name": "FastAPI",
+        "image": "fastAPI",
+        "reference": "https://fastapi.tiangolo.com"
+      },
+      {
+        "name": "Bootstrap CSS",
+        "image": "bootstrap",
+        "reference": "https://getbootstrap.com"
+      },
+      {
+        "name": "Tailwind CSS",
+        "image": "tailwind",
+        "reference": "https://tailwindcss.com"
+      }
+    ]
+  }
 ]
