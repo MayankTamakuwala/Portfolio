@@ -38,7 +38,7 @@ const PageAnimation = () => {
                         <img
                             className='imgHome'
                             loading='lazy'
-                            src={require("../assets/projects/img.jpeg")}
+                            src={require("../assets/projects/img1.jpg")}
                             alt="family"
                         />
                         {/* <h1 className="headline">Dream Big</h1> */}

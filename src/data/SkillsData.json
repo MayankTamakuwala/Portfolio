@@ -44,7 +44,7 @@
     "value": [
       {
         "name": "MongoDB",
-        "image": "python",
+        "image": "mongodb_dark",
         "reference": "https://www.mongodb.com"
       },
       {

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Masonry from '@mui/lab/Masonry';
 import {
     motion,
@@ -7,18 +7,19 @@ import {
 } from "framer-motion";
 import SkillsData from "../data/SkillsData.json"
 import { Divider, Typography } from '@mui/material';
+import SkillCarousel from '../components/SkillCarousel';
 
 const useParallax = (value, distance) => {
     return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-const ImageMasonry = ({data}) => {
+const ImageMasonry = ({data, className}) => {
     return (
         <div 
-            // className='w-5/6'
+            className='hidden lg:block'
             style={{ width: 800 }}
         >
-            <Masonry columns={{ xs: 2, sm: 3, lg: 4 }} spacing={2}>
+            <Masonry columns={{ xs: 2, sm: 4, lg: 4 }} spacing={2}>
                 {data.map((item, index) => (
                     <div key={index} style={{ backgroundColor: "white", borderRadius: 10 }}>
                         <a href={item.reference} target='_blank' rel="noreferrer" style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
@@ -54,19 +55,19 @@ const SkillPopulation = ({ data }) => {
             height: "100vh",
             scrollSnapAlign: "center",
             perspective: "500px",
-            }}
+        }}
         >
             <div ref={ref} className='mt-36'>
                 <Typography
-                    // variant={{xs: "h6", sm:"h4", lg:"h2"}}
-                    variant={"h2"}
+                    sx={{ typography: { xs: "h4", sm: "h3", lg: "h2" }}}
                 >
                     {data.key}
                 </Typography>
-                <Divider sx={{background:"white"}}/>
+                <Divider sx={{ background: "white" }} />
             </div>
-            <motion.div style={{ y }} className='mt-48'>
-                <ImageMasonry data={data.value}/>
+            <motion.div style={{ y }} className='mt-56 '>
+                <ImageMasonry data={data.value} />
+                <SkillCarousel data={data.value}/>
             </motion.div>
         </section>
     );
