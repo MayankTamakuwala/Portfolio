@@ -37,16 +37,17 @@ const PageAnimation = () => {
 };
 
 const Home = () => {
-    const text = useTypewriter(["Hello!", "Hope you are doing great...", "Say Hi to Mayank Tamakuwala!"])
+    const text1 = useTypewriter(["Hello!", "Hope you are doing great...", "Say Hi to Mayank Tamakuwala!"])
+    // const text2 = useTypewriter(["I'm a Full Stack Developer", "Hope you are doing great...", "Say Hi to Mayank Tamakuwala!"])
     return (
         <main className='homeHolder'>
             <section className='flex flex-col h-screen justify-center items-center pb-20 lg:pb-0'>
                 {
-                    text === "Hello!" ?
-                        <code className="text-xl md:text-2xl font-extrabold">&nbsp;{text}👋</code> : 
-                        text === "Hope you are doing great..." ?
-                            <code className="text-xl md:text-2xl font-extrabold">&nbsp;{text}😄</code> : 
-                            <code className="text-xl md:text-2xl font-extrabold">&nbsp;{text}</code>
+                    text1 === "Hello!" ?
+                        <code className="text-xl md:text-4xl font-extrabold">&nbsp;{text1}👋</code> : 
+                        text1 === "Hope you are doing great..." ?
+                            <code className="text-xl md:text-4xl  font-extrabold">&nbsp;{text1}😄</code> : 
+                            <code className="text-xl md:text-4xl font-extrabold">&nbsp;{text1}</code>
                 }
                 <PageAnimation />
                 {/* <div className='pt-10'>
