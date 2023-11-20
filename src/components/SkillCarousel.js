@@ -9,7 +9,7 @@ const SkillCarousel = ({data}) => {
                     data.map((item, index) => {
                         return (
                             <div className="carousel-item" key={index}>
-                                <img src={require(`../assets/skills/${item.image}.png`)} className="rounded-box w-80  h-96"></img>
+                                <img src={require(`../assets/skills/${item.image}.png`)} className="rounded-box w-80 h-96 m-5"></img>
                             </div>
                         )
                     })

@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import Experience from "./pages/Experience";
 import Skills from "./pages/Skills"
 import Resume from "./pages/Resume";
+import "./App.css"
 
 function App() {
   return (
