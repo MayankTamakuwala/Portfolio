@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import SkeletonLoader from '../components/skelotonLoader';
 import useTypewriter from '../components/useTypewriter';
