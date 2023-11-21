@@ -15,7 +15,7 @@ const Resume = () => {
                 title="Resume"
                 type="application/pdf"
                 style={{ background: "white", scrollbarWidth: "none" }}
-                data={require("../assets/resume/Mayank Tamakuwala Resume.pdf")}
+                data={require("../assets/resume/Mayank_Tamakuwala_Resume.pdf")}
                 height="99.9%"
                 width="100%"
             />
