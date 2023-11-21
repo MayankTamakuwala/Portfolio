@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 
-function useTypewriter( words, deleteDelay = 50, typeDelay = 60) {
+function useTypewriter( words, deleteDelay = 50, typeDelay = 60, loop = true) {
     const [wordIndex, setWordIndex] = useState(0);
     const [text, setText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
@@ -23,7 +23,11 @@ function useTypewriter( words, deleteDelay = 50, typeDelay = 60) {
         );
 
         if (!isDeleting && text === currentWord) {
-            setTimeout(() => setIsDeleting(true), 1000);
+            if (loop === true)
+                {setTimeout(() => setIsDeleting(true), 1000);}
+            else{
+                setTimeout(() => 1000);
+            }
         } 
         else if (isDeleting && text === "") {
             setIsDeleting(false);

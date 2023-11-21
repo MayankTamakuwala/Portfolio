@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
-import SkeletonLoader from '../components/skelotonLoader';
+import HomeScreen2 from './HomeScreen2';
 import useTypewriter from '../components/useTypewriter';
 
 const PageAnimation = () => {
@@ -28,7 +27,7 @@ const PageAnimation = () => {
             <div className='customHero pt-9'>
                 <img
                     className='imgHome rounded-3xl'
-                    src={require("../assets/projects/img4.jpg")}
+                    src={require("../assets/home/img4.jpg")}
                     alt="Say Hi to Mayank Tamakuwala"
                 />
             </div>
@@ -41,7 +40,7 @@ const Home = () => {
     // const text2 = useTypewriter(["I'm a Full Stack Developer", "Hope you are doing great...", "Say Hi to Mayank Tamakuwala!"])
     return (
         <main className='homeHolder'>
-            <section className='flex flex-col h-screen justify-center items-center pb-20 lg:pb-0'>
+            <section className='flex flex-col h-screen justify-center items-center pb-10 lg:pb-0'>
                 {
                     text1 === "Hello!" ?
                         <code className="text-xl md:text-4xl font-extrabold">&nbsp;{text1}👋</code> : 
@@ -50,17 +49,17 @@ const Home = () => {
                             <code className="text-xl md:text-4xl font-extrabold">&nbsp;{text1}</code>
                 }
                 <PageAnimation />
-                {/* <div className='pt-10'>
-                    <button className='btn animate-bounce rounded-full p-1'>
-                        <a href='#scroll'>
-                        <img className="fill-violet-400" src={require("../assets/projects/down-arrow.png")} alt="scroll down" width={40} height={40}/>
+                <div className='pt-10'>
+                    <button className='btn animate-bounce rounded-full p-1 bg-white border-0'>
+                        <a href='#homescreen2'>
+                        <img src={require("../assets/home/down-arrow.png")} alt="scroll down" width={38} height={38}/>
                         </a>
                     </button>
-                </div> */}
+                </div>
             </section>
-            {/* <section className='flex h-screen justify-center items-center' id="scroll">
-                <SkeletonLoader style={{ width: "80%", height: "50%", borderRadius: 20, marginTop: 10 }} />
-            </section> */}
+            <section className='flex h-screen justify-center items-center' id="homescreen2">
+                <HomeScreen2 />
+            </section>
         </main>
         
     )
