@@ -20,6 +20,13 @@ const Contact = () => {
         exit: "animate__animated animate__bounceOut"
     });
 
+    const options = {
+        transition: bounce,
+        autoClose: 1000,
+        pauseOnHover: false,
+        closeOnClick: true
+    }
+
     const [fname, setFname] = useState("")
     const [lname, setLname] = useState("")
     const [email, setEmail] = useState("")
@@ -169,37 +176,42 @@ const Contact = () => {
                                         className='sendButton px-3 py-3 sm:col-span-2 justify-center items-center sm:col-start-3'
                                         onClick={
                                             async () => {
-                                                emailjs.send(
-                                                    "service_zopalck",
-                                                    "template_5f8nftd",
-                                                    {
-                                                        message: content,
-                                                        subject: subject,
-                                                        from_name: fname + lname,
-                                                        from_email: email
-                                                    },
-                                                    "45P9ZQPMf4F3SVAPp"
-                                                ).then(function (res) {
-                                                    toast.success("Email Sent!", {
-                                                        transition: bounce,
-                                                        autoClose: 1000,
-                                                        pauseOnHover: false,
-                                                        closeOnClick: true
-                                                    })
-
-                                                    setContent("")
-                                                    setEmail("")
-                                                    setFname("")
-                                                    setLname("")
-                                                    setSubject("")
-                                                }, function (error) {
-                                                    toast.error("Something went wrong!", {
-                                                        transition: bounce,
-                                                        autoClose: 1000,
-                                                        pauseOnHover: false,
-                                                        closeOnClick: true
-                                                    })
-                                                })
+                                                if (fname.length === 0 || lname.length === 0 || email.length === 0 || subject.length === 0 || content.length === 0){
+                                                    if (fname.length === 0) {
+                                                        toast.warn("Enter your First Name", options)
+                                                    }
+                                                    if (lname.length === 0) {
+                                                        toast.warn("Enter your Last Name", options)
+                                                    }
+                                                    if (email.length === 0) {
+                                                        toast.warn("Enter your Email Address", options)
+                                                    }
+                                                    if (subject.length === 0) {
+                                                        toast.warn("Enter the Subject for the Email", options)
+                                                    }
+                                                    if (content.length === 0) {
+                                                        toast.warn("Enter the Email body", options)
+                                                    }
+                                                }
+                                                else{
+                                                    const res = await emailjs.send(
+                                                        "service_zopalck",
+                                                        "template_5f8nftd",
+                                                        {
+                                                            message: content,
+                                                            subject: subject,
+                                                            from_name: fname + lname,
+                                                            from_email: email
+                                                        },
+                                                        "45P9ZQPMf4F3SVAPp"
+                                                    )
+                                                    if (res.status === 200){
+                                                        toast.success("Email Sent!", options)
+                                                    }
+                                                    else{
+                                                        toast.error("Something went wrong!", options)
+                                                    }
+                                                }
                                             }
                                         }
                                     >

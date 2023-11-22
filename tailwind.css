@@ -1803,16 +1803,8 @@ html {
   line-height: 1.5rem;
 }
 
-.absolute {
-  position: absolute;
-}
-
 .relative {
   position: relative;
-}
-
-.z-10 {
-  z-index: 10;
 }
 
 .col-span-full {
@@ -2053,11 +2045,6 @@ html {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 
 .p-1 {
