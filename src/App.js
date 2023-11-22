@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import Experience from "./pages/Experience";
 import Skills from "./pages/Skills"
 import Resume from "./pages/Resume";
+import Contact from "./pages/Contact";
 import "./App.css"
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <Route path="experience" element={<Experience />} />
           <Route path="skills" element={<Skills />} />
           <Route path="resume" element={<Resume />} />
-          <Route path="contact" element={<Home />} />
+          <Route path="contact" element={<Contact />} />
         </Routes>
     </>
   );
