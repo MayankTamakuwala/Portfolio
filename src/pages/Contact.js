@@ -22,7 +22,7 @@ const Contact = () => {
 
     const options = {
         transition: bounce,
-        autoClose: 1000,
+        autoClose: 10,
         pauseOnHover: false,
         closeOnClick: true
     }
