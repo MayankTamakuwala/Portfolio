@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import useTypewriter from '../components/useTypewriter';
 import SocialMedia from '../components/SocialMedia';
 import emailjs from '@emailjs/browser';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast, cssTransition} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
     const text1 = "Thank you for giving Mayank Tamakuwala a chance. You will not regreat it! You can fill out this form below to send him an <b>Email</b> or directly contact him on either <b>LinkedIn</b> or <b>Instagram</b>."
@@ -13,6 +14,11 @@ const Contact = () => {
             <div dangerouslySetInnerHTML={{ __html: text }}></div>
         )
     }
+
+    const bounce = cssTransition({
+        enter: "animate__animated animate__bounceIn",
+        exit: "animate__animated animate__bounceOut"
+    });
 
     const [fname, setFname] = useState("")
     const [lname, setLname] = useState("")
@@ -25,7 +31,8 @@ const Contact = () => {
             <section className='flex flex-col h-screen justify-center items-center pb-10 lg:pb-0'>
                 <div
                     className="relative mb-2 p-4 flex-col flex scrollHide overflow-scroll overscroll-contain rounded-3xl mt-0 md:mt-5 bg-slate-100 w-[90%] md:w-[50%] h-[75%] md:h-[78%]"
-                >
+                >   
+                    <ToastContainer/>
                     <div className="inline-flex">
                         <img alt="you" src={require("../assets/home/you.png")} className="w-8 h-8 md:w-10 md:h-10" />
                         <div className="justify-center items-center">
@@ -162,26 +169,37 @@ const Contact = () => {
                                         className='sendButton px-3 py-3 sm:col-span-2 justify-center items-center sm:col-start-3'
                                         onClick={
                                             async () => {
-                                                try {
-                                                    emailjs.send(
-                                                        "service_zopalck",
-                                                        "template_5f8nftd",
-                                                        {
-                                                            message: content,
-                                                            subject: subject,
-                                                            from_name: fname + lname,
-                                                            from_email: email
-                                                        },
-                                                        "45P9ZQPMf4F3SVAPp"
-                                                    ).then(function (res) {
-                                                        toast("Email Sent!")
-                                                    }, function (error) {
-                                                        toast("Something went wrong!")
+                                                emailjs.send(
+                                                    "service_zopalck",
+                                                    "template_5f8nftd",
+                                                    {
+                                                        message: content,
+                                                        subject: subject,
+                                                        from_name: fname + lname,
+                                                        from_email: email
+                                                    },
+                                                    "45P9ZQPMf4F3SVAPp"
+                                                ).then(function (res) {
+                                                    toast.success("Email Sent!", {
+                                                        transition: bounce,
+                                                        autoClose: 1000,
+                                                        pauseOnHover: false,
+                                                        closeOnClick: true
                                                     })
-                                                }
-                                                catch {
 
-                                                }
+                                                    setContent("")
+                                                    setEmail("")
+                                                    setFname("")
+                                                    setLname("")
+                                                    setSubject("")
+                                                }, function (error) {
+                                                    toast.error("Something went wrong!", {
+                                                        transition: bounce,
+                                                        autoClose: 1000,
+                                                        pauseOnHover: false,
+                                                        closeOnClick: true
+                                                    })
+                                                })
                                             }
                                         }
                                     >
