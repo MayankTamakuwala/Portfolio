@@ -1,10 +1,16 @@
-// import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import "../App.css"
 import useTypewriter from "../components/useTypewriter"
+import { useInView } from "framer-motion"
 
-const ChatGPT = ({question, answer}) => {
-    const text1_effect = useTypewriter([answer], 0, 10, false)
-    // const endDiv = useRef(null)
+const ChatGPT = ({question, answer, startTyping = null}) => {
+    const containerRef = useRef(null)
+    const isInView = useInView(containerRef)
+    const text1_effect = useTypewriter(
+        [answer], 
+        startTyping === null ? (isInView ? true:false) : startTyping,
+        false, 0, 10
+    )
 
     const StringToHtml = (text) => {
         return (
@@ -40,7 +46,7 @@ const ChatGPT = ({question, answer}) => {
                     <img alt="GPT" src={require("../assets/home/chatgpt.png")} className="w-8 h-8 md:w-10 md:h-10 rounded-full p-1" style={{ backgroundColor: "rgb(25, 195, 125)" }} />
                     <div className="justify-center items-center" style={{ minWidth: "85%", maxWidth: "85%", height: "100%" }}>
                         <h3 className="pl-3 md:pl-5 text-black font-black">ChatGPT</h3>
-                        <div >
+                        <div ref={containerRef}>
                             <h3 className="pl-3 md:pl-5 text-black">{StringToHtml(text1_effect)}</h3>
                         </div>
                     </div>

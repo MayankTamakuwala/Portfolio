@@ -36,7 +36,7 @@ const PageAnimation = () => {
 };
 
 const Home = () => {
-    const text1 = useTypewriter(["Hello!", "Hope you are doing great...", "Say Hi to Mayank Tamakuwala!"])
+    const text1 = useTypewriter(["Hello!", "Hope you are doing great...", "Say Hi to Mayank Tamakuwala!"], true, true)
     return (
         <main className='homeHolder'>
             <section className='flex flex-col h-screen justify-center items-center pb-10 lg:pb-0'>
@@ -49,7 +49,7 @@ const Home = () => {
                 }
                 <PageAnimation />
                 <div className='pt-10'>
-                    <button className='btn animate-bounce rounded-full p-1 bg-white border-0'>
+                    <button className='btn animate-bounce rounded-full p-1 bg-white border-0 hover:bg-slate-400'>
                         <a href='#homescreen2'>
                         <img src={require("../assets/home/down-arrow.png")} alt="scroll down" width={38} height={38}/>
                         </a>

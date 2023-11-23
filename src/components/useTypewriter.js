@@ -1,17 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 
-function useTypewriter( words, deleteDelay = 50, typeDelay = 60, loop = true) {
+function useTypewriter(words, startTyping = false, loop = true, deleteDelay = 50, typeDelay = 60) {
     const [wordIndex, setWordIndex] = useState(0);
     const [text, setText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(type, isDeleting ? deleteDelay : typeDelay);
+        if (startTyping === true){
+            const timer = setTimeout(type, isDeleting ? deleteDelay : typeDelay);
 
-        return () => clearTimeout(timer);
+            return () => clearTimeout(timer);
+        }
+        else{
+            setText("")
+        }
 
-    }, [wordIndex, isDeleting, text]);
+    }, [wordIndex, isDeleting, text, startTyping]);
 
     function type() {
         const currentWord = words[wordIndex];
