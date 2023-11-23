@@ -12,9 +12,6 @@ function useTypewriter(words, startTyping = false, loop = true, deleteDelay = 50
 
             return () => clearTimeout(timer);
         }
-        else{
-            setText("")
-        }
 
     }, [wordIndex, isDeleting, text, startTyping]);
 
