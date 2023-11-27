@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useRef } from 'react';
 import Masonry from '@mui/lab/Masonry';
 import {
@@ -8,6 +9,8 @@ import {
 import SkillsData from "../data/SkillsData.json"
 import { Divider, Typography } from '@mui/material';
 import SkillCarousel from '../components/SkillCarousel';
+import InfiniteScroll from '../components/InfiniteScroll';
+
 
 const useParallax = (value, distance) => {
     return useTransform(value, [0, 1], [-distance, distance]);
@@ -76,23 +79,29 @@ const SkillPopulation = ({ data }) => {
 const Skills = () => {
 
     return (
-        <main 
-            style={{ 
-                backgroundColor: "rgb(52, 63, 77)", 
-                margin: 0, 
-                padding: 0, 
-                color: "white", 
-                display: "flex", 
-                flexDirection:"column",
-                justifyContent:"center",
-                alignItems: "center"
-                }}
+        <main
+            // style={{ 
+            //     backgroundColor: "rgb(52, 63, 77)", 
+            //     margin: 0, 
+            //     padding: 0, 
+            //     color: "white", 
+            //     display: "flex", 
+            //     flexDirection:"column",
+            //     justifyContent:"center",
+            //     alignItems: "center"
+            //     }}
+            // className='h-screen flex justify-center items-center'
             >
 
-            {SkillsData.map((data, index) => (
+            {/* {SkillsData.map((data, index) => (
                 <SkillPopulation data={data} key={index} />
-            ))}
-
+            ))} */}
+            {/* <div className='h-1/2 w-1/2'> */}
+                {/* <Chut />
+                <Chut delay={3} />
+                <Chut delay={-3} /> */}
+                <InfiniteScroll/>
+            {/* </div> */}
         </main>
     );
 }

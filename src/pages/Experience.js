@@ -30,7 +30,6 @@ const Projects = ({ data }) => {
             <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv" style={{width: "50%", backgroundColor: "white"}}>
                 <img
                     src={require(`/src/assets/projects/${data.name}.png`)}
-                    loading="lazy"
                     alt={data.name} 
                     className="p-5 imgTag"
                     style={{ objectFit: "fill", borderRadius: 40}}

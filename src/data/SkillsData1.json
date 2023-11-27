@@ -1,0 +1,182 @@
+[
+    [
+      {
+        "name": "Python",
+        "image": "python",
+        "reference": "https://www.python.org"
+      },
+      {
+        "name": "JavaScript",
+        "image": "javascript",
+        "reference": "https://www.javascript.com"
+      },
+      {
+        "name": "Java",
+        "image": "java",
+        "reference": "https://www.java.com/en/"
+      },
+      {
+        "name": "C++",
+        "image": "C++",
+        "reference": "https://cplusplus.com"
+      },
+      {
+        "name": "C",
+        "image": "C",
+        "reference": "https://en.wikipedia.org/wiki/C_(programming_language)"
+      },
+      {
+        "name": "Swift",
+        "image": "swift",
+        "reference": "https://www.swift.org/documentation/"
+      },
+      {
+        "name": "Kotlin",
+        "image": "kotlin",
+        "reference": "https://kotlinlang.org"
+      }
+    ],
+    [
+      {
+        "name": "MongoDB",
+        "image": "mongodb_dark",
+        "reference": "https://www.mongodb.com"
+      },
+      {
+        "name": "PostgreSQL",
+        "image": "postgresSQL",
+        "reference": "https://www.postgresql.org"
+      },
+      {
+        "name": "Amazon DynamoDB",
+        "image": "DynamoDB",
+        "reference": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+      },
+      {
+        "name": "Amazon RDS",
+        "image": "rds",
+        "reference": "https://www.mongodb.com"
+      },
+      {
+        "name": "JPA",
+        "image": "JPA",
+        "reference": "https://en.wikipedia.org/wiki/Jakarta_Persistence"
+      },
+      {
+        "name": "XML",
+        "image": "XML",
+        "reference": "https://www.w3.org/XML/"
+      },
+      {
+        "name": "JSON",
+        "image": "JSON",
+        "reference": "https://www.json.org/json-en.html"
+      },
+      {
+        "name": "MySQL",
+        "image": "mysql",
+        "reference": "https://www.mysql.com"
+      }
+    ],
+    [
+      {
+        "name": "Socket.io",
+        "image": "socket",
+        "reference": "https://socket.io"
+      },
+      {
+        "name": "NodeJS",
+        "image": "nodeJS",
+        "reference": "https://nodejs.org/en"
+      },
+      {
+        "name": "ReactJS",
+        "image": "react",
+        "reference": "https://react.dev"
+      },
+      {
+        "name": "RESTful API",
+        "image": "restAPI",
+        "reference": "https://www.redhat.com/en/topics/api/what-is-a-rest-api"
+      },
+      {
+        "name": "HTML",
+        "image": "HTML",
+        "reference": "https://html.spec.whatwg.org"
+      },
+      {
+        "name": "CSS",
+        "image": "CSS",
+        "reference": "https://www.w3.org/TR/CSS/#css"
+      }
+    ],
+    [
+      {
+        "name": "SwiftUI",
+        "image": "swiftUI",
+        "reference": "https://developer.apple.com/xcode/swiftui/"
+      },
+      {
+        "name": "React Native",
+        "image": "reactNative",
+        "reference": "https://reactnative.dev"
+      },
+      {
+        "name": "ExpressJS",
+        "image": "expressJS",
+        "reference": "https://expressjs.com"
+      },
+      {
+        "name": "Django",
+        "image": "django",
+        "reference": "https://www.djangoproject.com"
+      },
+      {
+        "name": "FastAPI",
+        "image": "fastAPI",
+        "reference": "https://fastapi.tiangolo.com"
+      },
+      {
+        "name": "Bootstrap CSS",
+        "image": "bootstrap",
+        "reference": "https://getbootstrap.com"
+      },
+      {
+        "name": "Tailwind CSS",
+        "image": "tailwind",
+        "reference": "https://tailwindcss.com"
+      }
+    ],
+    [
+      {
+        "name": "Matplotlib",
+        "image": "matplotlib",
+        "reference": "https://matplotlib.org/stable/index.html"
+      },
+      {
+        "name": "NumPy",
+        "image": "numpy",
+        "reference": "https://numpy.org"
+      },
+      {
+        "name": "Scikit-Learn",
+        "image": "sklearn",
+        "reference": "https://scikit-learn.org/stable/"
+      },
+      {
+        "name": "Pandas",
+        "image": "pandas",
+        "reference": "https://pandas.pydata.org"
+      },
+      {
+        "name": "Microsoft Office",
+        "image": "msOffice",
+        "reference": "https://www.office.com"
+      },
+      {
+        "name": "Jira",
+        "image": "jira",
+        "reference": "https://www.atlassian.com/software/jira?aceid=&adposition=&adgroup=136973856930&campaign=18440774103&creative=639487383004&device=c&keyword=jira&matchtype=e&network=g&placement=&ds_kids=p73335831609&ds_e=GOOGLE&ds_eid=700000001558501&ds_e1=GOOGLE&gclsrc=ds"
+      }
+    ]
+]
