@@ -6,7 +6,7 @@ import { ToastContainer, toast, cssTransition} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-    const text1 = "Thank you for giving Mayank Tamakuwala a chance. You will not regreat it! You can fill out this form below to send him an <b>Email</b> or directly contact him on either <b>LinkedIn</b> or <b>Instagram</b>."
+    const text1 = "Thank you for giving Mayank Tamakuwala a chance. You will not regret it! You can fill out this form below to send him an <b>Email</b> or directly contact him on either <b>LinkedIn</b> or <b>Instagram</b>."
     const text1_effect = useTypewriter([text1], true, false, 0, 10)
 
     const StringToHtml = (text) => {

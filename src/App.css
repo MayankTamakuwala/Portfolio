@@ -1,7 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to left, #ba7453, #d1a984);
+    /* background: linear-gradient(to left, #ba7453, #d1a984); */
+    background: linear-gradient(to left, #dd751a, #fad1ac);
     /* background: rgb(52, 63, 77); */
     /* height: 100vh; */
     color: #fafafa;
@@ -276,6 +277,7 @@ textarea:valid{
 .infinite-scroll-body {
     font-family: "Montserrat", sans-serif;
     background: #1e293b;
+    /* background: #f0de7a; */
     color: #f8fafc;
     min-width: 100vw;
     min-height: 100vh;
@@ -308,6 +310,7 @@ textarea:valid{
     animation-iteration-count: infinite;
     animation-direction: var(--direction);
     animation-duration: var(--duration);
+    animation-play-state: var(--isplaying);
 }
 
 .tag {
@@ -331,6 +334,7 @@ textarea:valid{
 .fade {
     pointer-events: none;
     background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
+    /* background: linear-gradient(90deg, #f0de7a, transparent 30%, transparent 70%, #f0de7a); */
     position: absolute;
     inset: 0;
 }
