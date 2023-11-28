@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import "../App.css";
 import SkillsData from "../data/SkillsData1.json";
 
