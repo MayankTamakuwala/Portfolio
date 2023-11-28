@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import "../App.css";
 import SkillsData from "../data/SkillsData1.json";
 
@@ -20,29 +20,56 @@ const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const shuffle = (arr) => [...arr].sort(() => 0.5 - Math.random());
 
 const InfiniteLoopSlider = ({ children, duration, reverse = false }) => {
+    const [isPlaying, setIsPlaying] = useState(true)
+
+    const handleHover = () => {
+        setIsPlaying(!isPlaying)
+    }
+
     return (
         <div
             className="loop-slider"
             style={{
                 "--duration": `${duration}ms`,
                 "--direction": reverse ? "reverse" : "normal",
+                "--isplaying": isPlaying ? "running" : "paused"
             }}
         >
-            <div className="inner">{children}</div>
+            <div 
+                className="inner"
+                onMouseEnter={handleHover}
+                onMouseLeave={handleHover}
+            >
+                {children}
+            </div>
         </div>
     );
 };
 
 const Tag = ({ text, href }) => {
+    const [hover, setHover] = useState(false)
+
+    const handleHover = () => {
+        setHover(!hover)
+    }
+
     return (
-        <div className="tag cursor-pointer">
+        <div 
+            className="tag cursor-pointer"
+            style={{
+                backgroundColor: hover ? "#09dede" : "#334155",
+                boxShadow: hover ? "0 0 5px rgb(0,140,255),0 0 25px rgb(0,140,255),0 0 50px rgb(0,140,255),0 0 100px rgb(0,140,255)" : null,
+            }}
+            onMouseEnter={handleHover}
+            onMouseLeave={handleHover}
+        >
             <a 
                 target='_blank'
                 rel="noreferrer"
                 href={href}
                 style={{
                     fontSize: "1.2rem",
-                    color: "gray",
+                    color: "white",
                 }}>
                 {" " + text}
             </a>
@@ -57,14 +84,14 @@ const InfiniteScroll = () => {
                 {[...new Array(ROWS)].map((_, i) => {
                     return (
                         <InfiniteLoopSlider
-                            key={i}
+                            key={crypto.randomUUID()}
                             duration={random(DURATION - 5000, DURATION + 5000)}
                             reverse={i % 2}
                         >
                             {shuffle(SkillsData[i])
                                 .slice(0, TAGS_PER_ROW)
                                 .map((tag) => {
-                                    return (<Tag text={tag.name} key={tag} href={tag.reference}/>);
+                                    return (<Tag text={tag.name} key={tag.name} href={tag.reference}/>);
                                 })}
                         </InfiniteLoopSlider>
                     );

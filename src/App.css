@@ -326,11 +326,6 @@ textarea:valid{
     box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2), 0 0.1rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.2rem 1.5rem rgba(0, 0, 0, 0.4);
 }
 
-.tag {
-    font-size: 1.2rem;
-    color: #64748b;
-}
-
 .fade {
     pointer-events: none;
     background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
