@@ -27,7 +27,7 @@ const PageAnimation = () => {
             <div className='customHero pt-9'>
                 <img
                     className='imgHome rounded-3xl'
-                    src={require("../assets/home/img4.jpg")}
+                    src={require("../assets/home/img10.jpg")}
                     alt="Say Hi to Mayank Tamakuwala"
                 />
             </div>
