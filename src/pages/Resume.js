@@ -11,13 +11,12 @@ const Resume = () => {
             }}
             className="lg:mt-10 mt-11"
         >
-            <object
-                title="Resume"
+            <iframe
+                title="Mayank Tamakuwala's Resume"
                 type="application/pdf"
+                className="h-screen w-screen"
                 style={{ background: "white", scrollbarWidth: "none" }}
-                data={require("../assets/resume/Mayank_Tamakuwala_Resume.pdf")}
-                height="99.9%"
-                width="100%"
+                src={require("../assets/resume/Mayank_Tamakuwala_Resume.pdf")}
             />
         </div>
     )
