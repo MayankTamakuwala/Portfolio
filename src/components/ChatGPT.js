@@ -37,17 +37,17 @@ const ChatGPT = ({question, answer, startTyping = null}) => {
                 <div className="inline-flex">
                     <img alt="you" src={require("../assets/home/you.png")} className="w-8 h-8 md:w-10 md:h-10" />
                     <div className="justify-center items-center">
-                        <h3 className="pl-3 md:pl-5 text-black font-black">You</h3>
-                        <h3 className="pl-3 md:pl-5 text-black">{question}</h3>
+                        <h3 className="pl-3 md:pl-5 text-black font-black lg:text-xl">You</h3>
+                        <h3 className="pl-3 md:pl-5 text-black lg:text-xl">{question}</h3>
                     </div>
                 </div>
 
                 <div className="inline-flex mt-3">
                     <img alt="GPT" src={require("../assets/home/chatgpt.png")} className="w-8 h-8 md:w-10 md:h-10 rounded-full p-1" style={{ backgroundColor: "rgb(25, 195, 125)" }} />
                     <div className="justify-center items-center" style={{ minWidth: "85%", maxWidth: "85%", height: "100%" }}>
-                        <h3 className="pl-3 md:pl-5 text-black font-black">ChatGPT</h3>
+                        <h3 className="pl-3 md:pl-5 text-black font-black lg:text-xl">ChatGPT</h3>
                         <div ref={containerRef}>
-                            <h3 className="pl-3 md:pl-5 text-black">{StringToHtml(text1_effect)}</h3>
+                            <h3 className="pl-3 md:pl-5 text-black lg:text-xl">{StringToHtml(text1_effect)}</h3>
                         </div>
                     </div>
                 </div>
