@@ -37,7 +37,7 @@ const ChatGPT = ({question, answer, startTyping = null}) => {
                 <div className="inline-flex">
                     <img alt="you" src={require("../assets/home/you.png")} className="w-8 h-8 md:w-10 md:h-10" />
                     <div className="justify-center items-center">
-                        <h3 className="pl-3 md:pl-5 text-black font-black xl:text-base">You</h3>
+                        <h3 className="pl-3 md:pl-5 text-black font-black xl:text-xl">You</h3>
                         <h3 className="pl-3 md:pl-5 text-black xl:text-xl">{question}</h3>
                     </div>
                 </div>
