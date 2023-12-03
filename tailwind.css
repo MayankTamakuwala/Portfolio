@@ -2394,6 +2394,11 @@ code {
     line-height: 1.75rem;
   }
 
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
   .md\:font-medium {
     font-weight: 500;
   }
@@ -2464,5 +2469,17 @@ code {
 
   .lg\:font-semibold {
     font-weight: 600;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .xl\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
