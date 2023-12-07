@@ -92,7 +92,7 @@ const Contact = () => {
                             <div className='mt-3 w-full p-3 justify-center items-center'>
                                 <h1 className="font-semibold text-xl text-gray-900">Send Email to Mayank Tamakuwala:</h1>
 
-                                <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 justify-center items-center">
+                                <form netlify className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 justify-center items-center">
                                     <div className="sm:col-span-3">
                                         <label htmlFor="first-name" className="block text-base font-medium leading-6 text-gray-900">
                                             First name
@@ -103,7 +103,7 @@ const Contact = () => {
                                                 type="text"
                                                 name="first-name"
                                                 id="first-name"
-                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                                             />
                                         </div>
                                     </div>
@@ -119,7 +119,7 @@ const Contact = () => {
                                                 name="last-name"
                                                 id="last-name"
                                                 autoComplete="family-name"
-                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                                             />
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                                                 name="email"
                                                 type="email"
                                                 autoComplete="email"
-                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                                             />
                                         </div>
                                     </div>
@@ -151,7 +151,7 @@ const Contact = () => {
                                                 name="subject"
                                                 type="subject"
                                                 autoComplete="email"
-                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                                             />
                                         </div>
                                     </div>
@@ -166,7 +166,7 @@ const Contact = () => {
                                                 id="about"
                                                 name="about"
                                                 rows={3}
-                                                className="block bg-transparent w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                className="block bg-transparent w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                                             />
                                         </div>
                                         <p className="mt-3 text-sm leading-6 text-gray-600">Write whatever's on your mind.</p>
@@ -235,7 +235,7 @@ const Contact = () => {
                                         <span className='sendSpan'>Send</span>
                                     </button>
 
-                                </div>
+                                </form>
                             </div>
                         </div>
                         : null
