@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useTypewriter from '../components/useTypewriter';
 import SocialMedia from '../components/SocialMedia';
-import emailjs from '@emailjs/browser';
-import { ToastContainer, toast, cssTransition} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Form from '../components/Form';
 
 const Contact = () => {
     const text1 = "Thank you for giving Mayank Tamakuwala a chance. You will not regret it! You can fill out this form below to send him an <b>Email</b> or directly contact him on either <b>LinkedIn</b> or <b>Instagram</b>."
@@ -15,31 +13,12 @@ const Contact = () => {
         )
     }
 
-    const bounce = cssTransition({
-        enter: "animate__animated animate__bounceIn",
-        exit: "animate__animated animate__bounceOut"
-    });
-
-    const options = {
-        transition: bounce,
-        autoClose: 10,
-        pauseOnHover: false,
-        closeOnClick: true
-    }
-
-    const [fname, setFname] = useState("")
-    const [lname, setLname] = useState("")
-    const [email, setEmail] = useState("")
-    const [subject, setSubject] = useState("")
-    const [content, setContent] = useState("")
-
     return (
         <main className='homeHolder'>
             <section className='flex flex-col h-screen justify-center items-center pb-10 lg:pb-0'>
                 <div
                     className="relative mb-2 p-4 flex-col flex scrollHide overflow-scroll overscroll-contain rounded-3xl mt-0 md:mt-5 bg-slate-100 w-[90%] md:w-[50%] h-[75%] md:h-[78%]"
-                >   
-                    <ToastContainer/>
+                >
                     <div className="inline-flex">
                         <img alt="you" src={require("../assets/home/you.png")} className="w-8 h-8 md:w-10 md:h-10" />
                         <div className="justify-center items-center">
@@ -91,151 +70,7 @@ const Contact = () => {
                             </div>
                             <div className='mt-3 w-full p-3 justify-center items-center'>
                                 <h1 className="font-semibold text-xl text-gray-900">Send Email to Mayank Tamakuwala:</h1>
-
-                                <form netlify className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 justify-center items-center">
-                                    <div className="sm:col-span-3">
-                                        <label htmlFor="first-name" className="block text-base font-medium leading-6 text-gray-900">
-                                            First name
-                                        </label>
-                                        <div className="mt-2">
-                                            <input
-                                                onChange={(t) => { setFname(t.target.value) }}
-                                                type="text"
-                                                name="first-name"
-                                                id="first-name"
-                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="sm:col-span-3">
-                                        <label htmlFor="last-name" className="block text-base font-medium leading-6 text-gray-900">
-                                            Last name
-                                        </label>
-                                        <div className="mt-2">
-                                            <input
-                                                onChange={(t) => { setLname(t.target.value) }}
-                                                type="text"
-                                                name="last-name"
-                                                id="last-name"
-                                                autoComplete="family-name"
-                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="sm:col-span-3">
-                                        <label htmlFor="email" className="block text-base font-medium leading-6 text-gray-900">
-                                            Email address
-                                        </label>
-                                        <div className="mt-2">
-                                            <input
-                                                onChange={(t) => { setEmail(t.target.value) }}
-                                                id="email"
-                                                name="email"
-                                                type="email"
-                                                autoComplete="email"
-                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="sm:col-span-3">
-                                        <label htmlFor="subject" className="block text-base font-medium leading-6 text-gray-900">
-                                            Subject
-                                        </label>
-                                        <div className="mt-2">
-                                            <input
-                                                onChange={(t) => { setSubject(t.target.value) }}
-                                                id="suhject"
-                                                name="subject"
-                                                type="subject"
-                                                autoComplete="email"
-                                                className="block w-full rounded-md border-0 py-1.5 bg-transparent text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="col-span-full">
-                                        <label htmlFor="about" className="block text-base font-medium leading-6 text-gray-900">
-                                            Write a Message
-                                        </label>
-                                        <div className="mt-2">
-                                            <textarea
-                                                onChange={(t) => { setContent(t.target.value) }}
-                                                id="about"
-                                                name="about"
-                                                rows={3}
-                                                className="block bg-transparent w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
-                                            />
-                                        </div>
-                                        <p className="mt-3 text-sm leading-6 text-gray-600">Write whatever's on your mind.</p>
-                                    </div>
-
-                                    <button
-                                        className='sendButton px-3 py-3 sm:col-span-2 justify-center items-center sm:col-start-3'
-                                        onClick={
-                                            async () => {
-                                                if (fname.length === 0 || lname.length === 0 || email.length === 0 || subject.length === 0 || content.length === 0){
-                                                    if (fname.length === 0) {
-                                                        toast.warn("Enter your First Name", options)
-                                                    }
-                                                    if (lname.length === 0) {
-                                                        toast.warn("Enter your Last Name", options)
-                                                    }
-                                                    if (email.length === 0) {
-                                                        toast.warn("Enter your Email Address", options)
-                                                    }
-                                                    if (subject.length === 0) {
-                                                        toast.warn("Enter the Subject for the Email", options)
-                                                    }
-                                                    if (content.length === 0) {
-                                                        toast.warn("Enter the Email body", options)
-                                                    }
-                                                }
-                                                else{
-                                                    const res = await emailjs.send(
-                                                        "service_zopalck",
-                                                        "template_5f8nftd",
-                                                        {
-                                                            message: content,
-                                                            subject: subject,
-                                                            from_name: fname + lname,
-                                                            from_email: email
-                                                        },
-                                                        "45P9ZQPMf4F3SVAPp"
-                                                    )
-                                                    if (res.status === 200){
-                                                        toast.success("Email Sent!", options)
-                                                    }
-                                                    else{
-                                                        toast.error("Something went wrong!", options)
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    >
-                                        <div class="svg-wrapper-1">
-                                            <div class="svg-wrapper">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 24 24"
-                                                    width="24"
-                                                    height="24"
-                                                    className='sendSvg'
-                                                >
-                                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                                    <path
-                                                        fill="currentColor"
-                                                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                                                    ></path>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <span className='sendSpan'>Send</span>
-                                    </button>
-
-                                </form>
+                                <Form/>
                             </div>
                         </div>
                         : null

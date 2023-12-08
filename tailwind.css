@@ -2115,6 +2115,10 @@ html {
   padding-bottom: 2.5rem;
 }
 
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -2133,10 +2137,6 @@ html {
 
 .pt-9 {
   padding-top: 2.25rem;
-}
-
-.pl-2 {
-  padding-left: 0.5rem;
 }
 
 .text-base {
