@@ -51,10 +51,11 @@ const Form = () => {
             if (res.status === 200 || res.status === 201){
                 toast.success("Email Sent!", options)
                 setFormValues({
-                    fullName: "",
-                    address: "",
-                    number: "",
-                    occupation: ""
+                    fname: "",
+                    lname: "",
+                    email: "",
+                    subject: "",
+                    content: "",
                 });
             }
             else{
@@ -77,7 +78,7 @@ const Form = () => {
             <form
                 className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 justify-center items-center"
                 method="POST"
-                data-netlify="true"
+                dataNetlify="true"
                 onSubmit={async(e) => handleSubmit(e)}
             >
                 <div className="sm:col-span-3">
@@ -86,6 +87,7 @@ const Form = () => {
                     </label>
                     <div className="mt-2">
                         <input
+                            value={formValues.fname}
                             onChange={(t) => { setFormValues({ ...formValues, fname: t.target.value }) }}
                             type="text"
                             name="first-name"
@@ -101,6 +103,7 @@ const Form = () => {
                     </label>
                     <div className="mt-2">
                         <input
+                            value={formValues.lname}
                             onChange={(t) => { setFormValues({ ...formValues, lname: t.target.value }) }}
                             type="text"
                             name="last-name"
@@ -117,6 +120,7 @@ const Form = () => {
                     </label>
                     <div className="mt-2">
                         <input
+                            value={formValues.email}
                             onChange={(t) => { setFormValues({ ...formValues, email: t.target.value }) }}
                             id="email"
                             name="email"
@@ -133,6 +137,7 @@ const Form = () => {
                     </label>
                     <div className="mt-2">
                         <input
+                            value={formValues.subject}
                             onChange={(t) => { setFormValues({ ...formValues, subject: t.target.value }) }}
                             id="suhject"
                             name="subject"
@@ -149,6 +154,7 @@ const Form = () => {
                     </label>
                     <div className="mt-2">
                         <textarea
+                            value={formValues.content}
                             onChange={(t) => { setFormValues({ ...formValues, content: t.target.value }) }}
                             id="about"
                             name="about"
