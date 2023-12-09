@@ -2,6 +2,7 @@ import { useState } from "react"
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast, cssTransition } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import validate from "deep-email-validator-fix";
 
 const Form = () => {
 
@@ -37,30 +38,45 @@ const Form = () => {
             }
         }
         else{
-            var res = await emailjs.send(
-                "service_zopalck",
-                "template_5f8nftd",
-                {
-                    message: formValues.content,
-                    subject: formValues.subject,
-                    from_name: formValues.fname + formValues.lname,
-                    from_email: formValues.email
-                },
-                "45P9ZQPMf4F3SVAPp"
-            )
-            if (res.status === 200 || res.status === 201){
-                toast.success("Email Sent!", options)
-                setFormValues({
-                    fname: "",
-                    lname: "",
-                    email: "",
-                    subject: "",
-                    content: "",
-                });
-            }
-            else{
-                toast.error("Something went wrong!", options)
-            }
+            // var validateEmail = await validate(
+            //     {
+            //         email: formValues.email,
+            //         validateRegex: true,
+            //         validateMx: true,
+            //         validateTypo: true,
+            //         validateDisposable: true,
+            //         validateSMTP: true,
+            //     }
+            // )
+            // if (validateEmail.valid){
+                var sendingEmail = await emailjs.send(
+                    "service_zopalck",
+                    "template_5f8nftd",
+                    {
+                        message: formValues.content,
+                        subject: formValues.subject,
+                        from_name: formValues.fname + formValues.lname,
+                        from_email: formValues.email
+                    },
+                    "45P9ZQPMf4F3SVAPp"
+                )
+                if (sendingEmail.status === 200 || sendingEmail.status === 201) {
+                    toast.success("Email Sent!", options)
+                    setFormValues({
+                        fname: "",
+                        lname: "",
+                        email: "",
+                        subject: "",
+                        content: "",
+                    });
+                }
+                else {
+                    toast.error("Something went wrong!", options)
+                }
+            // }
+            // else{
+            //     toast.info("Invalid Email Address!", options)
+            // }
         }
     }
 
