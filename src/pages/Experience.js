@@ -44,7 +44,7 @@ const Projects = ({ data }) => {
                     <ol style={{ listStyleType: 'disc' }}>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs ">{StringToHtml(data.line1)}</li>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs ">{StringToHtml(data.line2)}</li>
-                        <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5 ">{StringToHtml(data.line3)}</li>
+                        {data.line3 ? <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5 ">{StringToHtml(data.line3)}</li> : null}
                     </ol>
                 </div>
             </motion.div>

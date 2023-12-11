@@ -18,6 +18,11 @@
         "line3": "Demonstrated a deep understanding of modern web development principles and practices, including agile development methodologies, testing and debugging, and continuous integration and deployment."
     },
     {
+        "name": "Automobile Price Predction",
+        "line1": "Implemented prediction system for Automobile Prices using various machine learning models such as Linear Regression, Gradient Boosting Regressor, Support Vector Regressor, Decision Tree Regressor, and Random Forest Regressor with different normalization methods such as PCA and K-fold validation.",
+        "line2": "Performed comparison and analysis to gain insights on metrics like accuracy, F1 score, and confusion matrix using Statistics and Regression Analysis and utilizing concepts like Principal Component Analysis and Linear Discriminant Analysis."
+    },
+    {
         "name": "BeachMuse",
         "line1": "Designed a website for the <b>2023 BeachHacks hackathon</b> that can help a large crowd collaborate and explore new songs in the music world by adding their choice of songs into a single collaborative queue.",
         "line2": "Built reusable front-end components such as Now Playing, Navigation Bar, Queue system, and Search functionality using <b>JavaScript, ReactJS, ExpressJS, MaterialUI,</b> and various available <b>Spotify APIs.</b>",
