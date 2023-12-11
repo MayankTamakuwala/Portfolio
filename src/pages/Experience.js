@@ -27,7 +27,7 @@ const Projects = ({ data }) => {
 
     return (
         <section className="sectionBodyExp card lg:card-side pt-32 lg:pt-0">
-            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv" style={{ width: "50%", backgroundColor: "white" }}>
+            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv h-[300px] md:h-[400px] cursor-pointer" style={{ width: "50%", backgroundColor: "white" }}>
                 <img
                     src={require(`/src/assets/projects/${data.name}.png`)}
                     alt={data.name} 
