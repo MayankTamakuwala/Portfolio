@@ -59,7 +59,7 @@ const Education = () => {
 
     return (
         <section className="sectionBodyExp card lg:card-side pt-32 lg:pt-0">
-            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv" style={{ width: "50%", backgroundColor: "white" }}>
+            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv h-[300px] md:h-[400px]" style={{ width: "50%", backgroundColor: "white" }}>
                 <img
                     src={require("../assets/education/csulb.png")}
                     alt={"California State University Long Beach"}
@@ -92,7 +92,7 @@ const WorkExperience = () => {
 
     return (
         <section className="sectionBodyExp card lg:card-side pt-32 lg:pt-0">
-            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv" style={{ width: "50%", backgroundColor: "white" }}>
+            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv h-[300px] md:h-[400px] " style={{ width: "50%", backgroundColor: "white" }}>
                 <img
                     src={require("../assets/work/Karsun.png")}
                     alt={"Karsun Solutions LLC."}
