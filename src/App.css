@@ -305,12 +305,6 @@ textarea:valid{
 .loop-slider .inner {
     display: flex;
     width: fit-content;
-    animation-name: loop;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: var(--direction);
-    animation-duration: var(--duration);
-    animation-play-state: var(--isplaying);
 }
 
 .tag {
@@ -334,13 +328,23 @@ textarea:valid{
     inset: 0;
 }
 
-@keyframes loop {
+@keyframes loop-mobile {
     0% {
-        transform: translateX(calc(100vw));
+        transform: translateX(70%);
     }
 
     100% {
-        transform: translateX(calc(-100%));
+        transform: translateX(-70%);
+    }
+}
+
+@keyframes loop-desktop {
+    0% {
+        transform: translateX(30%);
+    }
+
+    100% {
+        transform: translateX(-30%);
     }
 }
 

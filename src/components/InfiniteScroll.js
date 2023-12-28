@@ -1,23 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import "../App.css";
 import SkillsData from "../data/SkillsData1.json";
 
-// const COLORS = [
-//     "#bbf7d0",
-//     "#99f6e4",
-//     "#bfdbfe",
-//     "#ddd6fe",
-//     "#f5d0fe",
-//     "#fed7aa",
-//     "#fee2e2",
-// ];
-
-const DURATION = 17000;
 const ROWS = SkillsData.length;
-const TAGS_PER_ROW = 5;
 
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-const shuffle = (arr) => [...arr].sort(() => 0.5 - Math.random());
 
 const InfiniteLoopSlider = ({ children, duration, reverse = false }) => {
     const [isPlaying, setIsPlaying] = useState(true)
@@ -28,10 +15,12 @@ const InfiniteLoopSlider = ({ children, duration, reverse = false }) => {
 
     return (
         <div
-            className="loop-slider"
+            className="loop-slider
+                animate-[loop-mobile_calc(var(--duration)+3000ms)_linear_infinite_var(--direction)_var(--isplaying)]
+                md:animate-[loop-desktop_var(--duration)_linear_infinite_var(--direction)_var(--isplaying)]"
             style={{
                 "--duration": `${duration}ms`,
-                "--direction": reverse ? "reverse" : "normal",
+                "--direction": reverse ? "alternate" : "alternate-reverse",
                 "--isplaying": isPlaying ? "running" : "paused"
             }}
         >
@@ -78,18 +67,19 @@ const Tag = ({ text, href }) => {
 };
 
 const InfiniteScroll = () => {
+    const id = useId()
     return (
         <div className="infinite-scroll-body">
             <div className="tag-list">
                 {[...new Array(ROWS)].map((_, i) => {
                     return (
                         <InfiniteLoopSlider
-                            key={crypto.randomUUID()}
-                            duration={random(DURATION - 5000, DURATION + 5000)}
+                            key={id}
+                            duration={random(3000, 5000)}
                             reverse={i % 2}
                         >
-                            {shuffle(SkillsData[i])
-                                .slice(0, TAGS_PER_ROW)
+                            {SkillsData[i]
+                                .slice(0, SkillsData[i].length)
                                 .map((tag) => {
                                     return (<Tag text={tag.name} key={tag.name} href={tag.reference}/>);
                                 })}
