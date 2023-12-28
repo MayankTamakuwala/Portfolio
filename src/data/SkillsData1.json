@@ -55,7 +55,7 @@
       {
         "name": "Amazon RDS",
         "image": "rds",
-        "reference": "https://www.mongodb.com"
+        "reference": "https://aws.amazon.com/rds/?p=ft&c=db&z=3"
       },
       {
         "name": "JPA",
