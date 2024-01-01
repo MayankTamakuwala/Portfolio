@@ -1,35 +1,41 @@
 [
     {
         "name": "Mock'EM",
+        "code": "https://apple.co/3DyVZvO",
         "line1": "Developed and co-created Mock’EM, an innovative iMessage extension app enabling users to transform their voice or text into captivating deep fake voices and send hilarious and engaging messages to friends through iMessage.",
         "line2": "Employed <b>SwiftUI</b> to design the frontend and integrated <b>Swift</b> along with the <b>FakeYou API</b> for the backend, resulting in a seamless and user-friendly application that offers fantastic deepfake generation capabilities.",
         "line3": "Collaborated with one other person to develop the application within the projected <b>2-month timeline</b>, leading to a successful launch and achieving an impressive ranking of <b>#68</b> in the App Store’s Entertainment category."
     },
     {
         "name": "CheaperEater",
+        "code": "https://youtu.be/6FJXU9ALyEM",
         "line1": "Created a comprehensive price comparison app for popular food delivery services, such as GrubHub, DoorDash, UberEats, and Postmates.",
         "line2": "Utilized <b>React Native</b> with <b>tailwind-rn</b> for the frontend and <b>Express JS</b> for the backend to deliver a seamless and user-friendly application.",
         "line3": "Implemented <b>reverse engineering</b> techniques to clone and retrieve data from the targeted food delivery service APIs, ensuring accurate and real-time pricing comparisons."
     },
     {
         "name": "WordDangler",
+        "code": "",
         "line1": "Contributed to the development of WordDangler, a multiplayer hangman game with real-time messaging, using modern web technologies like <b>ReactJS, DaisyUI,</b> and <b>Tailwind CSS</b> for the frontend, and <b>Express JS</b> and <b>Socket.io</b> for the backend.",
         "line2": "Collaborated with a team of developers to achieve shared goals and effectively implemented features such as lobby system, real-time messaging, and game mechanics.",
         "line3": "Demonstrated a deep understanding of modern web development principles and practices, including agile development methodologies, testing and debugging, and continuous integration and deployment."
     },
     {
         "name": "Automobile Price Prediction",
+        "code": "https://github.com/MayankTamakuwala/Automobile-Price-Prediction",
         "line1": "Implemented prediction system for Automobile Prices using various machine learning models such as Linear Regression, Gradient Boosting Regressor, Support Vector Regressor, Decision Tree Regressor, and Random Forest Regressor with different normalization methods such as PCA and K-fold validation.",
         "line2": "Performed comparison and analysis to gain insights on metrics like accuracy, F1 score, and confusion matrix using Statistics and Regression Analysis and utilizing concepts like Principal Component Analysis and Linear Discriminant Analysis."
     },
     {
         "name": "BeachMuse",
+        "code": "",
         "line1": "Designed a website for the <b>2023 BeachHacks hackathon</b> that can help a large crowd collaborate and explore new songs in the music world by adding their choice of songs into a single collaborative queue.",
         "line2": "Built reusable front-end components such as Now Playing, Navigation Bar, Queue system, and Search functionality using <b>JavaScript, ReactJS, ExpressJS, MaterialUI,</b> and various available <b>Spotify APIs.</b>",
         "line3": "Collaborated with a team of 7 members for the development of this application within the projected time of 4 months."
     },
     {
         "name": "EazMeet",
+        "code": "https://youtu.be/Qb_buINtQ0I",
         "line1": "Developed a mobile application that finds feasible meeting places between two locations using the user’s input location and the user’s present location.",
         "line2": "Provides the user with the top ten possible locations and has options for choosing from the available filters as well, giving the user the freedom to choose the kind of location they want.",
         "line3": "Applied front-end components of the amazing user experience for <b>Android</b> and <b>iOS</b> were built using the <b>React-Native</b> framework, and <b>TomTom’s Search and Places API</b> was used to get the reviews and photographs of the locations."

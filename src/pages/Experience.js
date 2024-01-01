@@ -39,12 +39,21 @@ const Projects = ({ data }) => {
                 className="card-body w-11/12 h-fit rounded-2xl glass lg:mr-5"
             >
                 <div>
-                    <p className="lg:text-6xl lg:font-semibold md:text-3xl md:font-medium text-xl " style={{margin:0}}> {data.name} </p>
+                    <div className="cursor-pointer items-center m-0"> 
+                        <a href={data.code} target="_blank" rel="noreferrer" className="lg:text-6xl lg:font-semibold md:text-3xl md:font-medium text-xl flex">
+                            {data.name}
+                            &nbsp;
+                            {data.code !== "" ?
+                                <img className="w-6 h-6 md:w-10 md:h-10 lg:w-12 lg:h-12" src={require("../assets/projects/code.png")} alt="Demonstation"/>
+                                : null
+                            }
+                        </a>
+                    </div>
                     <div className="divider" style={{margin: 0}}/>
                     <ol style={{ listStyleType: 'disc' }}>
                         {data.line1 ?<li className="lg:mb-5 lg:text-lg md:text-sm text-xs ">{StringToHtml(data.line1)}</li>: null}
                         {data.line2 ?<li className="lg:mb-5 lg:text-lg md:text-sm text-xs ">{StringToHtml(data.line2)}</li>: null}
-                        {data.line3 ? <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5 ">{StringToHtml(data.line3)}</li> : null}
+                        {data.line3 ?<li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5 ">{StringToHtml(data.line3)}</li> : null}
                     </ol>
                 </div>
             </motion.div>
