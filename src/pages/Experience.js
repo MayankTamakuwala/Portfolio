@@ -27,7 +27,7 @@ const Projects = ({ data }) => {
 
     return (
         <section className="sectionBodyExp card lg:card-side pt-32 lg:pt-0">
-            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv h-[300px] md:h-[400px] cursor-pointer" style={{ width: "50%", backgroundColor: "white" }}>
+            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv h-[250px] md:h-[400px] cursor-pointer" style={{ width: "50%", backgroundColor: "white" }}>
                 <img
                     src={require(`/src/assets/projects/${data.name}.png`)}
                     alt={data.name} 
@@ -39,15 +39,30 @@ const Projects = ({ data }) => {
                 className="card-body w-11/12 h-fit rounded-2xl glass lg:mr-5"
             >
                 <div>
-                    <div className="cursor-pointer items-center m-0"> 
-                        <a href={data.code} target="_blank" rel="noreferrer" className="lg:text-6xl lg:font-semibold md:text-3xl md:font-medium text-xl flex">
-                            {data.name}
-                            &nbsp;
+                    <div className="m-0 inline-flex items-center justify-evenly  w-full">
+                        <div>
                             {data.code !== "" ?
-                                <img className="w-6 h-6 md:w-10 md:h-10 lg:w-12 lg:h-12" src={require("../assets/projects/code.png")} alt="Demonstation"/>
-                                : null
-                            }
-                        </a>
+                            (
+                                <a href={data.code} target="_blank" rel="noreferrer" className="lg:text-6xl lg:font-semibold md:text-3xl md:font-medium text-xl">
+                                    {data.name}
+                                    &nbsp;
+                                </a>
+                            ) : (
+                                <p className="lg:text-6xl lg:font-semibold md:text-3xl md:font-medium text-xl">{data.name}</p>
+                            )}
+                        </div>
+                        {data.code !== "" ?
+                            (
+                                <div className="w-6 h-6 md:w-16 md:h-10 lg:w-20 lg:h-12">
+                                    <a href={data.code} target="_blank" rel="noreferrer" className="lg:text-6xl lg:font-semibold md:text-3xl md:font-medium text-xl inline-flex">
+                                        <img src={data.code !== "" ? require("../assets/projects/code.png") : ""} alt="Demonstation" />
+                                    </a>
+                                </div>
+                            ) : null 
+                        }
+                        <div className="lg:text-xl md:text-3xl text-xs flex-wrap w-full flex justify-end items-center">
+                            <i className="italic font-serif">{data.duration}</i>
+                        </div>
                     </div>
                     <div className="divider" style={{margin: 0}}/>
                     <ol style={{ listStyleType: 'disc' }}>
