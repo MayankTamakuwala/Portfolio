@@ -2,9 +2,9 @@
     {
         "name": "FaceFusion",
         "code": "https://huggingface.co/spaces/MayankTamakuwala/FaceFusion",
-        "line1": "Developed and independently created FaceBlendify, an innovative FaceSwap application that seamlessly merges faces from two input images, utilizing Insightface's advanced \"buffalo_l\" model for precise face detection and analysis.",
-        "line2": "Implemented the face-swapping mechanism with the \"inswapper_128.onnx\" model, ensuring a natural blend and color matching between the swapped face and the target body.",
-        "line3": "Designed an intuitive user interface using Gradio and deployed the application on HuggingFace spaces for easy accessibility"
+        "line1": "Developed FaceFusion, an innovative FaceSwap app allowing users to merge faces from two input images seamlessly with <b>95% accuracy</b>",
+        "line2": "Implemented Insightface's <b>\"buffalo_l\"</b> model for precise face detection and analysis, while leveraging the <b>\"inswapper_128.onnx\"</b> model to ensure a high-quality fusion with accurate color matching and blending",
+        "line3": "Utilized <b>Gradio UI</b>, providing a user-friendly experience, and deployed the application on HuggingFace Spaces. The swapping mechanism, operating as an API on an <b>AWS EC2 Ubuntu instance</b>, boosts a response time by <b>100 ms</b>, showcasing the efficiency of the solution."
     },
     {
         "name": "Mock'EM",
