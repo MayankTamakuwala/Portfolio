@@ -1,7 +1,7 @@
 [
     {
         "name": "FaceFusion",
-        "code": "https://huggingface.co/spaces/MayankTamakuwala/FaceFusion",
+        "code": "https://mayanktamakuwala-facefusion.hf.space",
         "line1": "Developed FaceFusion, an innovative FaceSwap app allowing users to merge faces from two input images seamlessly with <b>95% accuracy</b>.",
         "line2": "Implemented Insightface's <b>\"buffalo_l\"</b> model for precise face detection and analysis, while leveraging the <b>\"inswapper_128.onnx\"</b> model to ensure a high-quality fusion with accurate color matching and blending.",
         "line3": "Utilized <b>Gradio UI</b>, providing a user-friendly experience, and deployed the application on HuggingFace Spaces. The swapping mechanism, operating as an API on an <b>AWS EC2 Ubuntu instance</b>, boosts a response time by <b>100 ms</b>, showcasing the efficiency of the solution.",
