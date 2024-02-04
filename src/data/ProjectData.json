@@ -1,5 +1,12 @@
 [
     {
+        "name": "FaceFusion",
+        "code": "https://huggingface.co/spaces/MayankTamakuwala/FaceFusion",
+        "line1": "Developed and independently created FaceBlendify, an innovative FaceSwap application that seamlessly merges faces from two input images, utilizing Insightface's advanced \"buffalo_l\" model for precise face detection and analysis.",
+        "line2": "Implemented the face-swapping mechanism with the \"inswapper_128.onnx\" model, ensuring a natural blend and color matching between the swapped face and the target body.",
+        "line3": "Designed an intuitive user interface using Gradio and deployed the application on HuggingFace spaces for easy accessibility"
+    },
+    {
         "name": "Mock'EM",
         "code": "https://apple.co/3DyVZvO",
         "line1": "Developed and co-created Mock’EM, an innovative iMessage extension app enabling users to transform their voice or text into captivating deep fake voices and send hilarious and engaging messages to friends through iMessage.",
