@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import useTypewriter from '../components/useTypewriter';
+import useTypewriter from '../hooks/useTypewriter';
 import ChatGPT from '../components/ChatGPT';
 
 const PageAnimation = () => {

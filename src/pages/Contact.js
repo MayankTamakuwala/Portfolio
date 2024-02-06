@@ -1,5 +1,5 @@
 import React from 'react';
-import useTypewriter from '../components/useTypewriter';
+import useTypewriter from '../hooks/useTypewriter';
 import SocialMedia from '../components/SocialMedia';
 import Form from '../components/Form';
 

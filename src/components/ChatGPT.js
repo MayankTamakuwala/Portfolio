@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import "../App.css"
-import useTypewriter from "../components/useTypewriter"
+import useTypewriter from "../hooks/useTypewriter"
 import { useInView } from "framer-motion"
 
 const ChatGPT = ({question, answer, startTyping = null}) => {
