@@ -70,15 +70,6 @@ html {
     height: 100%;
 }
 
-.progress {
-    position: fixed;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: #fafafa;
-    bottom: 100px;
-}
-
 /* Home Screen 1 */
 .homeHolder {
     height: 100vh;
@@ -412,4 +403,19 @@ textarea:valid{
     to{
         transform: scaleX(1);
     }
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: white;
+    transform-origin: 0%;
+}
+
+.glow {
+    border-radius: 14px;
+    box-shadow: rgba(74, 0, 255, 0.8) 0 0 90px 33px;
 }

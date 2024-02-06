@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
 import "../App.css";
 import { useRef, useState } from "react";
 import {
     motion,
     useScroll,
-    useSpring,
     useTransform,
 } from "framer-motion";
 import ProjectData from "../data/ProjectData.json"
@@ -16,40 +14,39 @@ const useParallax = (value, distance) => {
     return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-const StringToHtml = (text) => {
-    return (
-        <div dangerouslySetInnerHTML={{ __html: text }}></div>
-    )
-}
+// const StringToHtml = (text) => {
+//     return (
+//         <div dangerouslySetInnerHTML={{ __html: text }}></div>
+//     )
+// }
 
 const Projects = ({ data }) => {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({ target: ref });
-    const y = useParallax(scrollYProgress, 300);
 
     return (
-        <section className="sectionBodyExp card lg:card-side pt-20 lg:pt-0 px-2">
-            <div ref={ref}>
+        <section className="sectionBodyExp card lg:card-side pt-20 lg:pt-0 px-2 lg:px-36">
+            <div>
                 <div className="text-center flex justify-center items-center flex-col gap-y-5">
                     <p className="text-lg md:text-2xl lg:text-3xl font-extrabold">
                         {data.summary}
                     </p>
+                    <div className="flex flex-wrap gap-4 items-center justify-center gap-x-3 overflow-auto gap-y-1">
+                        <span className="text-sm md:text-lg lg:text-xl font-extrabold">Tags:</span> {data.tags.map((tag) => {
+                            return (
+                                <Chip label={tag} color="primary" style={{ fontSize: { xs: '0.75rem', sm: '0.875rem' } }} />
+                            )
+                        })}
+                    </div>
                     <p className="text-sm md:text-lg lg:text-xl">
                         <span className="underline font-bold">What I did</span>: {data.what}
                     </p>
                     <p className="text-sm md:text-lg lg:text-xl">
                         <span className="underline font-bold">How I did it</span>: {data.how}
                     </p>
-                    <div className="flex flex-wrap gap-4 items-center justify-center gap-x-3 overflow-auto gap-y-1">
-                        {data.tags.map((tag) => {
-                            return (
-                                <Chip label={tag} color="primary" style={{ fontSize: {xs:'0.75rem', sm:'0.875rem'}}}/>
-                            )
-                        })}
-                    </div>
                 </div>
 
-                <div className="overflow-x-auto">
+                <div 
+                    className="overflow-x-auto"
+                >
                     <table className="table">
                         <thead>
                             <tr>
@@ -226,11 +223,6 @@ const WorkExperience = () => {
 
 const Experience = () => {
     const { scrollYProgress } = useScroll();
-    const scaleX = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001
-    });
 
     const [tabValue, setTabValue] = useState(1);
 
@@ -243,6 +235,10 @@ const Experience = () => {
             backgroundColor: "rgb(52, 63, 77)",
             margin: 0, padding: 0, color: "white"
         }}>
+            <motion.div
+                className="progress-bar glow"
+                style={{ scaleX: scrollYProgress }}
+            />
             <ExperienceTabs value={tabValue} handleChange={handleChange} />
 
             {tabValue === 1 ?
@@ -252,8 +248,6 @@ const Experience = () => {
                 : tabValue === 2 ?
                     <Education /> : <WorkExperience />
             }
-
-            <motion.div className="progress" style={{ scaleX, margin: 0 }} />
         </main>
     );
 }
