@@ -1,15 +1,29 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import {AppBar, Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button}  from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import { useLocation, useNavigate } from "react-router-dom";
+import { useScroll } from '../hooks/useScroll';
 
 const drawerWidth = 240;
 const navItems = ["Skills", "Experience", 'Resume', 'Contact'];
+const styles = {
+    active: {
+        visibility: "visible",
+        transition: "all 0.5s"
+    },
+    hidden: {
+        visibility: "hidden",
+        transition: "all 0.5s",
+        transform: "translateY(-100%)"
+    }
+}
 
 const NavBar = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+    const { y, x, scrollDirection } = useScroll();
 
     const [mobileOpen, setMobileOpen] = useState(false);
     const [page, setPage] = useState("Home")
@@ -92,6 +106,7 @@ const NavBar = () => {
                     // backgroundColor: "rgb(52, 63,77)",
                     maxHeight: "60px"
                 }}
+                style={scrollDirection === "down" || location.pathname !== "/experience" ? styles.active : styles.hidden}
             >
                 <Toolbar>
                     <IconButton
@@ -137,7 +152,7 @@ const NavBar = () => {
                     </Box>
                 </Toolbar>
             </AppBar>
-            <Box component="nav">
+            <Box component="nav" style={scrollDirection === "down" ? styles.active : styles.hidden}>
                 <Drawer
                     variant="temporary"
                     open={mobileOpen}

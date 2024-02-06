@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "../App.css";
 import { useRef, useState } from "react";
 import {
@@ -8,6 +9,7 @@ import {
 } from "framer-motion";
 import ProjectData from "../data/ProjectData.json"
 import ExperienceTabs from "../components/ExperienceTabs";
+import { Chip } from "@mui/material";
 
 
 const useParallax = (value, distance) => {
@@ -26,8 +28,86 @@ const Projects = ({ data }) => {
     const y = useParallax(scrollYProgress, 300);
 
     return (
-        <section className="sectionBodyExp card lg:card-side pt-32 lg:pt-0">
-            <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv h-[250px] md:h-[400px] cursor-pointer" style={{ width: "50%", backgroundColor: "white" }}>
+        <section className="sectionBodyExp card lg:card-side pt-20 lg:pt-0 px-2">
+            <div ref={ref}>
+                <div className="text-center flex justify-center items-center flex-col gap-y-5">
+                    <p className="text-lg md:text-2xl lg:text-3xl font-extrabold">
+                        {data.summary}
+                    </p>
+                    <p className="text-sm md:text-lg lg:text-xl">
+                        <span className="underline font-bold">What I did</span>: {data.what}
+                    </p>
+                    <p className="text-sm md:text-lg lg:text-xl">
+                        <span className="underline font-bold">How I did it</span>: {data.how}
+                    </p>
+                    <div className="flex flex-wrap gap-4 items-center justify-center gap-x-3 overflow-auto gap-y-1">
+                        {data.tags.map((tag) => {
+                            return (
+                                <Chip label={tag} color="primary" style={{ fontSize: {xs:'0.75rem', sm:'0.875rem'}}}/>
+                            )
+                        })}
+                    </div>
+                </div>
+
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-center items-center">
+                            <tr>
+                                <td className="text-sm md:text-lg lg:text-xl md:font-bold">{data.name}</td>
+                                <td>
+                                    <div className="text-sm md:text-lg lg:text-xl italic font-serif flex justify-center items-center">
+                                        {data.duration} &nbsp;
+                                        {data.code !== "" && (
+                                            <a href={data.code} target="_blank" rel="noreferrer">
+                                                <img src={data.code !== "" ? require("../assets/projects/code.png") : ""} alt="Demonstration" className="w-5 h-5 md:w-7 md:h-7 lg:w-10 lg:h-10"/>
+                                            </a>
+                                        )}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <img
+                                        src={require(`/src/assets/projects/${data.name}.png`)}
+                                        alt={data.name}
+                                        className={"w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-md " + (data.name === "CheaperEater" || data.name === "WordDangler" || data.name === "BeachMuse" ? "bg-white" : "")}
+                                    />
+                                </td>
+                                <td align="center">
+                                    <div className="w-full p-2 glass flex items-start justify-center rounded-lg text-center text-xs md:text-sm lg:text-lg">
+
+                                        <div className="w-1/2 text-center flex flex-col justify-center items-center">
+                                            <h1>Tech</h1>
+                                            <div className="divider" style={{ margin: 0 }} />
+                                            {data.technology.map((tech, index) => {
+                                                return (<p key={index}>{tech}</p>)
+                                            })}
+                                        </div>
+
+                                        <div className="divider divider-horizontal" />
+
+                                        <div className="w-1/2 text-center flex flex-col justify-center items-center">
+                                            <h1>Code</h1>
+                                            <div className="divider" style={{ margin: 0 }} />
+                                            {data.prog_lang.map((tech, index) => {
+                                                return (<p key={index}>{tech}</p>)
+                                            })}
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {/* <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv h-[250px] md:h-[400px] cursor-pointer" style={{ width: "50%", backgroundColor: "white" }}>
                 <img
                     src={require(`/src/assets/projects/${data.name}.png`)}
                     alt={data.name} 
@@ -71,7 +151,7 @@ const Projects = ({ data }) => {
                         {data.line3 ?<li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5 ">{StringToHtml(data.line3)}</li> : null}
                     </ol>
                 </div>
-            </motion.div>
+            </motion.div> */}
         </section>
     );
 }
@@ -135,7 +215,7 @@ const WorkExperience = () => {
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Developed general-purpose software for an AI/ML project called Synthetic Data Portal that creates fictitious Personal Identifiable Information depending on user input into the user interface utilizing Synthetic Data Vault (SDV), the Faker library, and the Python programming language. </li>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Created UI views with the App-Routing feature using React JS and AWS for the web application. </li>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Utilized Amazon Web Services to help with project development and save production time by 35% by using S3 for
-storage, Cognito for authentication, and Amplify for UI components. </li>
+                            storage, Cognito for authentication, and Amplify for UI components. </li>
                         <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5"> Collaborated with a team of 5 and maintain constant communication to finish this project in 5 weeks. </li>
                     </ol>
                 </div>
@@ -159,23 +239,17 @@ const Experience = () => {
     };
 
     return (
-        <main style={{ 
+        <main style={{
             backgroundColor: "rgb(52, 63, 77)",
-            // backgroundColor: "#b6e3af",
-            // backgroundColor: "#b09974",
-            // backgroundColor: "#e8ca99",
-            // backgroundColor: "#77a1a1",
-            // backgroundColor: "#e3d37b",
-            // backgroundColor: "linear-gradient(to right, #dd751a, #fad1ac)",
+            margin: 0, padding: 0, color: "white"
+        }}>
+            <ExperienceTabs value={tabValue} handleChange={handleChange} />
 
-            margin: 0, padding: 0, color: "white" }}>
-            <ExperienceTabs value={tabValue} handleChange={handleChange}/>
-            
-            {tabValue === 1 ? 
+            {tabValue === 1 ?
                 ProjectData.map((data, index) => (
                     <Projects data={data} key={index} />
                 ))
-                : tabValue === 2 ? 
+                : tabValue === 2 ?
                     <Education /> : <WorkExperience />
             }
 

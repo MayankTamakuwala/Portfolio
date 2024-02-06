@@ -1,15 +1,32 @@
+/* eslint-disable no-unused-vars */
 import { AppBar, Tab, Tabs } from "@mui/material"
+import { useScroll } from '../hooks/useScroll';
 
 const ExperienceTabs = ({ value, handleChange }) => {
+    const styles = {
+        active: {
+            visibility: "visible",
+            transition: "all 0.5s"
+        },
+        hidden: {
+            visibility: "hidden",
+            transition: "all 0.5s",
+            transform: "translateY(-100%)"
+        }
+    }
+
+    const { y, x, scrollDirection } = useScroll();
+
     return(
         <AppBar sx={{
-            marginTop: { xs: 7, sm: 7.5 },
+            // marginTop: { xs: 7, sm: 7.5 },
             justifyContent: "center",
             alignItems: "center",
             backgroundColor: "rgba(0,0,0,0)",
             boxShadow: 0,
             width: { xs: "100%", sm: "100%" }
         }}
+            style={scrollDirection === "down" ? styles.hidden : styles.active}
         >
             <Tabs
                 value={value}
