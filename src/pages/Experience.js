@@ -61,8 +61,9 @@ const Projects = ({ data }) => {
                                     <div className="text-sm md:text-lg lg:text-xl italic font-serif flex justify-center items-center">
                                         {data.duration} &nbsp;
                                         {data.code !== "" && (
-                                            <a href={data.code} target="_blank" rel="noreferrer">
+                                            <a href={data.code} target="_blank" rel="noreferrer" className="inline-flex items-center">
                                                 <img src={data.code !== "" ? require("../assets/projects/code.png") : ""} alt="Demonstration" className="w-5 h-5 md:w-7 md:h-7 lg:w-10 lg:h-10"/>
+                                                {"(Try it Out)"}
                                             </a>
                                         )}
                                     </div>
