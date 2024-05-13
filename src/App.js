@@ -17,7 +17,7 @@ function App() {
           <Route path="experience" element={<Experience />} />
           <Route path="skills" element={<Skills />} />
           <Route path="resume" element={<Resume />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="contact" element={<Contact darkMode/>} />
         </Routes>
     </>
   );

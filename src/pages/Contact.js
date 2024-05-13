@@ -3,8 +3,8 @@ import useTypewriter from '../hooks/useTypewriter';
 import SocialMedia from '../components/SocialMedia';
 import Form from '../components/Form';
 
-const Contact = () => {
-    const text1 = "Thank you for giving Mayank Tamakuwala a chance. You will not regret it! You can fill out this form below to send him an <b>Email</b> or directly contact him on either <b>LinkedIn</b> or <b>Instagram</b>."
+const Contact = ({color, darkMode = false}) => {
+    const text1 = "Thank you for giving Mayank Tamakuwala a chance. You can fill out this form below to send Mayank an <b>Email</b> or directly contact him on either <b>LinkedIn</b> or <b>Instagram</b>."
     const text1_effect = useTypewriter([text1], true, false, 0, 10)
 
     const StringToHtml = (text) => {
@@ -13,26 +13,33 @@ const Contact = () => {
         )
     }
 
+    if (darkMode) {
+        color = "white"
+    } else {
+        color = "black"
+    }
+
     return (
         <main className='homeHolder'>
             <section className='flex flex-col h-screen justify-center items-center pb-10 lg:pb-0'>
                 <div
-                    className="relative mb-2 p-4 flex-col flex scrollHide overflow-scroll overscroll-contain rounded-3xl mt-0 md:mt-5 bg-slate-100 w-[90%] md:w-[50%] h-[75%] md:h-[78%]"
+                    className="gpt relative mb-2 p-4 flex-col flex scrollHide overflow-scroll overscroll-contain rounded-3xl mt-0 md:mt-5 bg-slate-100 w-[90%] md:w-[50%] h-[75%] md:h-[78%]"
+                    style={{ backgroundColor: darkMode ? "#212121" : "#ffffff" }}
                 >
                     <div className="inline-flex">
                         <img alt="you" src={require("../assets/home/you.png")} className="w-8 h-8 md:w-10 md:h-10" />
-                        <div className="justify-center items-center">
-                            <h3 className="pl-3 md:pl-5 text-black font-black xl:text-xl">You</h3>
-                            <h3 className="pl-3 md:pl-5 text-black xl:text-xl">Yo GPT, How should I contact Mayank Tamakuwala?</h3>
+                        <div className="justify-center items-center" style={{ color: color }}>
+                            <h3 className="pl-3 md:pl-5 font-black xl:text-xl">You</h3>
+                            <h3 className="pl-3 md:pl-5 xl:text-xl">Yo GPT, How should I contact Mayank Tamakuwala?</h3>
                         </div>
                     </div>
 
                     <div className="inline-flex mt-3">
-                        <img alt="GPT" src={require("../assets/home/chatgpt.png")} className="w-8 h-8 md:w-10 md:h-10 rounded-full p-1" style={{ backgroundColor: "rgb(25, 195, 125)" }} />
+                        <img alt="GPT" src={require("../assets/home/chatgpt.png")} className="w-8 h-8 md:w-10 md:h-10 rounded-full p-1" style={{ backgroundColor: darkMode ? "#212121" : "rgb(25, 195, 125)", border: darkMode ? "1px solid white" : null }} />
                         <div className="justify-center items-center" style={{ minWidth: "85%", maxWidth: "85%", height: "100%" }}>
-                            <h3 className="pl-3 md:pl-5 text-black font-black xl:text-xl">ChatGPT</h3>
-                            <div >
-                                <h3 className="pl-3 md:pl-5 text-black xl:text-xl">{StringToHtml(text1_effect)}</h3>
+                            <h3 className="pl-3 md:pl-5 font-black xl:text-xl" style={{ color: color }}>ChatGPT</h3>
+                            <div style={{ color: color }}>
+                                <h3 className="pl-3 md:pl-5 xl:text-xl">{StringToHtml(text1_effect)}</h3>
                             </div>
                         </div>
                     </div>
@@ -68,8 +75,8 @@ const Contact = () => {
                                     </svg>
                                 </SocialMedia>
                             </div>
-                            <div className='mt-3 w-full p-3 justify-center items-center'>
-                                <h1 className="font-semibold text-xl text-gray-900">Send Email to Mayank Tamakuwala:</h1>
+                            <div className='mt-3 w-full p-3 justify-center items-center' style={{color: color}}>
+                                <h1 className="font-semibold text-xl">Send Email to Mayank Tamakuwala:</h1>
                                 <Form/>
                             </div>
                         </div>
