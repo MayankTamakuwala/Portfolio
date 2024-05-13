@@ -5,7 +5,7 @@ import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react';
 import { useThree, useFrame, Canvas, extend } from '@react-three/fiber';
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
-import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei'
+import { useGLTF, useTexture, Environment, Lightformer, Html } from '@react-three/drei'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import CardModel from "../assets/home/card.glb"
 import bandImage from "../assets/home/band.jpg"
@@ -17,10 +17,21 @@ useGLTF.preload(CardModel)
 useTexture.preload(bandImage)
 
 export default function IdCard() {
-    // const { debug } = useControls({ debug: false })
+    const CameraSetup = () => {
+        const { camera, size } = useThree();
+
+        useEffect(() => {
+            const aspectRatio = size.width / size.height;
+            camera.fov = aspectRatio < 1 ? 25 : 20;
+            camera.updateProjectionMatrix();
+        }, [camera, size.width, size.height]);
+
+        return null;
+    };
     return (
-        <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
-            <ambientLight intensity={Math.PI} />
+        <Canvas camera={{ position: [0, 0, 13], fov: 20 }}>
+            <CameraSetup />
+            <ambientLight intensity={Math.PI/10} />
             <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
                 <Band />
             </Physics>
@@ -35,21 +46,6 @@ export default function IdCard() {
             </Environment>
         </Canvas>
     )
-}
-
-const RecursionCall = ({parent}) => {
-        return (
-            <>
-                {parent.children.map((c) => {return (
-                    <mesh geometry={c.geometry} material={c.material}>
-                        <RecursionCall parent={c} />
-                    </mesh>
-                )})}
-            </>
-            // <mesh>
-            //     <RecursionCall children={children}/>
-            // </mesh>
-        )
 }
 
 const Band = ({ maxSpeed = 50, minSpeed = 10 }) => {
@@ -133,16 +129,17 @@ const Band = ({ maxSpeed = 50, minSpeed = 10 }) => {
                         onPointerUp={(e) => (e.target.releasePointerCapture(e.pointerId), drag(false))}
                         onPointerDown={(e) => (e.target.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))))}
                     >
-                             
+
                         <mesh geometry={nodes.card.geometry}>
                             <meshPhysicalMaterial
-                             map={materials.base.map}
-                             map-anisotropy={16} 
-                             clearcoat={1} clearcoatRoughness={0.15} roughness={0.3} metalness={0.5} />
+                                map={materials.base.map}
+                                map-anisotropy={16}
+                                clearcoat={1} clearcoatRoughness={0.15} roughness={0.3} metalness={0.5}
+                            />
                         </mesh>
                         <mesh geometry={nodes.clip.geometry}
                             material={materials.metal}
-                            material-roughness={0.3} 
+                            material-roughness={0.3}
                         />
                         <mesh geometry={nodes.clamp.geometry}
                             material={materials.metal}
