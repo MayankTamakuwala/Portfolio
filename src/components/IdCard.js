@@ -49,8 +49,8 @@ export default function IdCard() {
 }
 
 const Band = ({ maxSpeed = 50, minSpeed = 10 }) => {
-    const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef() // prettier-ignore
-    const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3() // prettier-ignore
+    const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef()
+    const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3()
     const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 }
     const { nodes, materials } = useGLTF(CardModel)
     // const { nodes, materials } = useGLTF('https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb')
@@ -61,12 +61,44 @@ const Band = ({ maxSpeed = 50, minSpeed = 10 }) => {
     const [dragged, drag] = useState(false)
     const [hovered, hover] = useState(false)
 
-    console.log(nodes)
-
     useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1])
     useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1])
     useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1])
     useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]])
+
+    const [rotationY, setRotationY] = useState(0);
+    const [isFront, setIsFront] = useState(true);
+    const [clicked, setClicked] = useState(false)
+
+    useFrame((state, delta) => {
+        if (clicked) {
+            const step = delta * Math.PI;
+            setRotationY(prev => {
+                let newRotation
+                if (isFront){
+                    newRotation = prev + step;
+                } else {
+                    newRotation = prev - step;
+                }
+                if(isFront){
+                    if (newRotation >= Math.PI) {
+                        setIsFront(!isFront)
+                        setClicked(false)
+                    }
+                } else {
+                    if (newRotation <= 0) {
+                        setIsFront(!isFront)
+                        setClicked(false)
+                    }
+                }
+                return newRotation;
+            });
+        }
+    });
+
+    const handleFlip = () => {
+        setClicked(true)
+    };
 
     useEffect(() => {
         if (hovered) {
@@ -128,8 +160,8 @@ const Band = ({ maxSpeed = 50, minSpeed = 10 }) => {
                         onPointerOut={() => hover(false)}
                         onPointerUp={(e) => (e.target.releasePointerCapture(e.pointerId), drag(false))}
                         onPointerDown={(e) => (e.target.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))))}
+                        rotation={[0, rotationY, 0]} onClick={handleFlip}
                     >
-
                         <mesh geometry={nodes.card.geometry}>
                             <meshPhysicalMaterial
                                 map={materials.base.map}
@@ -144,6 +176,9 @@ const Band = ({ maxSpeed = 50, minSpeed = 10 }) => {
                         <mesh geometry={nodes.clamp.geometry}
                             material={materials.metal}
                         />
+                        {/* <Html position={[0, 0, 0.55]} >
+                            <button onClick={handleFlip} className='btn bg-[#171717]'>Flip Card</button>
+                        </Html> */}
                     </group>
                 </RigidBody>
             </group>
