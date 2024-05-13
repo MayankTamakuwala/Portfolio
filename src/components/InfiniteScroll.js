@@ -46,8 +46,8 @@ const Tag = ({ text, href }) => {
         <div 
             className="tag cursor-pointer"
             style={{
-                backgroundColor: hover ? "#09dede" : "#334155",
-                boxShadow: hover ? "0 0 5px rgb(0,140,255),0 0 25px rgb(0,140,255),0 0 50px rgb(0,140,255),0 0 100px rgb(0,140,255)" : null,
+                backgroundColor: hover ? "rgba(74, 0, 255, 0.8)" : "#171717",
+                boxShadow: hover ? "0 0 5px rgb(74, 0, 255),0 0 25px rgb(74, 0, 255),0 0 50px rgb(74, 0, 255),0 0 100px rgb(74, 0, 255)" : null,
             }}
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}

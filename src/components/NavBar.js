@@ -60,8 +60,24 @@ const NavBar = () => {
     },[location])
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor: "rgb(29,35,42)", height:"100%" }}>
-            <Typography 
+        <Box onClick={handleDrawerToggle} 
+            sx={{ 
+                textAlign: 'center', 
+                // backgroundColor: "rgb(29,35,42)",
+                background: "linear-gradient(to right, #020202, #171717)",
+                height:"100%" 
+            }}>
+            {/* <Button 
+                onClick={
+                    () => handleNavigation("Home")
+                }
+                sx={{ 
+                    my: 2,
+                    color: "white",
+                    cursor: "pointer"
+                }}
+            > */}
+            {/* <Typography 
                 variant="h6"
                 sx={{ 
                     my: 2,
@@ -73,7 +89,19 @@ const NavBar = () => {
                 }
             >
                 Mayank Tamakuwala
-            </Typography>
+            </Typography> */}
+            {/* </Button> */}
+            <IconButton
+                sx={{
+                    my: 2,
+                    cursor: "pointer"
+                }}
+                onClick={
+                    () => handleNavigation("Home")
+                }
+            >
+                <img src={require("../assets/home/Geometric MT.png")} alt='Home' className='w-16 h-16' />
+            </IconButton>
             <Divider sx={{backgroundColor:"white"}}/>
             <List>
                 {navItems.map((item, index) => (
@@ -102,8 +130,9 @@ const NavBar = () => {
                 // component="nav"
                 sx={{
                     borderRadius: "0px 0px 20px 20px",
-                    backgroundColor: "rgb(29,35,42)",
+                    // backgroundColor: "rgb(29,35,42)",
                     // backgroundColor: "rgb(52, 63,77)",
+                    background: "linear-gradient(to bottom, #020202, #171717)",
                     maxHeight: "60px"
                 }}
                 style={scrollDirection === "down" || location.pathname !== "/experience" ? styles.active : styles.hidden}
@@ -119,17 +148,14 @@ const NavBar = () => {
                         <MenuIcon />
                     </IconButton>
                     <div style={{ flexGrow: 1 }}>
-                        <Typography
-                            variant="h6"
-                            // component="div"
-                            sx={{  display: { xs: 'none', sm: 'block' }, cursor: "pointer", width:"max-content"}}
+                        <IconButton
+                            sx={{ display: { xs: 'none', sm: 'block' }, cursor: "pointer", width: "max-content" }}
                             onClick={
                                 () => handleNavigation("Home")
                             }
                         >
-                            Mayank Tamakuwala
-                        </Typography>
-                    
+                            <img src={require("../assets/home/Geometric MT.png")} alt='Home' className='ml-5 w-10 h-10 bg-transparent' />
+                        </IconButton>
                         <Typography
                             variant="h5"
                             sx={{ flexGrow: 1, display: { sm: 'none' }}}

@@ -30,9 +30,16 @@ const Projects = ({ data }) => {
                         {data.summary}
                     </p>
                     <div className="flex flex-wrap gap-4 items-center justify-center gap-x-3 overflow-auto gap-y-1">
-                        <span className="text-sm md:text-lg lg:text-xl font-extrabold">Tags:</span> {data.tags.map((tag) => {
+                        <span className="text-sm md:text-lg lg:text-xl font-extrabold">Tags:</span> 
+                        {data.tags.map((tag) => {
                             return (
-                                <Chip label={tag} color="primary" style={{ fontSize: { xs: '0.75rem', sm: '0.875rem' } }} />
+                                <Chip label={tag} 
+                                    style={{ 
+                                        fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                                        backgroundColor: "#171717",
+                                        color: "white"
+                                    }} 
+                                />
                             )
                         })}
                     </div>
@@ -233,7 +240,7 @@ const Experience = () => {
 
     return (
         <main style={{
-            backgroundColor: "rgb(52, 63, 77)",
+            // backgroundColor: "rgb(52, 63, 77)",
             margin: 0, padding: 0, color: "white"
         }}>
             <motion.div

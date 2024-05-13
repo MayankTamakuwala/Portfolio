@@ -34,7 +34,8 @@ const ExperienceTabs = ({ value, handleChange }) => {
                 aria-label="Experiences"
                 sx={{
                     borderRadius: "0 0 15px 15px",
-                    backgroundColor: "rgba(29,35,42,1)",
+                    // backgroundColor: "rgba(29,35,42,1)",
+                    background: "linear-gradient(to bottom, #020202, #171717)",
                     borderWidth: 0,
                     boxShadow: 10,
                 }}
