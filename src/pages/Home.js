@@ -38,7 +38,7 @@ import "../App.css";
 // };
 
 const Home = () => {
-    const text1 = useTypewriter(["software developer.", "coder.", "problem solver.", "critical thinker.", "maker.", "designer."], true, true, 50, 120)
+    const text1 = useTypewriter(["Software Developer.", "Coder.", "Problem Solver.", "Critical Thinker.", "Maker.", "Designer."], true, true, 50, 120)
     return (
         <main className='homeHolder'>
             <section className='flex flex-col h-screen justify-center items-center pb-10 lg:pb-0'>
