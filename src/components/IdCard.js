@@ -22,7 +22,7 @@ export default function IdCard() {
 
         useEffect(() => {
             const aspectRatio = size.width / size.height;
-            camera.fov = aspectRatio < 1 ? 25 : 20;
+            camera.fov = aspectRatio < 1 ? 25 : 21;
             camera.updateProjectionMatrix();
         }, [camera, size.width, size.height]);
 
