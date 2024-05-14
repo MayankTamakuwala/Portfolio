@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react';
 import { useThree, useFrame, Canvas, extend } from '@react-three/fiber';
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
-import { useGLTF, useTexture, Environment, Lightformer, Html } from '@react-three/drei'
+import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import CardModel from "../assets/home/card.glb"
 import bandImage from "../assets/home/band.jpg"
