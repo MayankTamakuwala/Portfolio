@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-sequences */
-
 import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react';
 import { useThree, useFrame, Canvas, extend } from '@react-three/fiber';
