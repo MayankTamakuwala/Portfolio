@@ -1,0 +1,20 @@
+[
+    {
+		"name": "Grossi Consulting LLC",
+        "position": "Full Stack Engineering Intern",
+        "image": "grossi",
+		"line1": "Faced with the task of creating highly customized websites for a diverse range of clients and industries as a Full Stack Developer at a web design agency.",
+		"line2": "Led the development and deployment of designs to production on GCP, ensuring seamless client and team communication, utilized GitHub for version control, and used Jest for unit testing to ensure code quality.",
+		"line3": "Engineered solutions with Next.js, Node.js and React.js for the frontend and Express.js and GraphQL for backend REST APIs, configured Cloudflare, AWS S3, Elastic Load Balancer, and Lambda for scalability, and utilized Google Tag Manager, Google Search Console, and Google Analytics for SEO enhancement.",
+		"line4": "Delivered the projects on time, resulting in a significant increase in client satisfaction and referrals, and bolstered our agency’s reputation for solving complex technical issues."
+	},
+	{
+		"name": "Karsun Solutions LLC",
+        "position": "Software Engineering Intern",
+        "image": "Karsun",
+		"line1": "Aimed to construct synthetic data suitable for a myriad of Machine Learning and Artificial Intelligence Use Cases, a project requiring the generation of fictitious Personal Identifiable Information based on user inputs.",
+		"line2": "Employed React.js and Node.js for frontend development and Jest, along with Lighthouse for performance and responsiveness testing, reducing potential bottlenecks and ensuring a seamless user experience across various devices.",
+		"line3": "Utilized libraries like Synthetic Data Vault(SDV) and the Faker library in Python, integrated with AWS services (S3, Cognito, Amplify) to optimize storage and authentication.",
+		"line4": "Produced synthetic data with a high semblance to the authentic data enabling the client to successfully train the model within a tight 5-week deadline and reducing production time by 35%."
+	}
+]

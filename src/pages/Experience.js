@@ -6,6 +6,7 @@ import {
     useTransform,
 } from "framer-motion";
 import ProjectData from "../data/ProjectData.json"
+import WorkData from "../data/WorkData.json"
 import ExperienceTabs from "../components/ExperienceTabs";
 import { Chip } from "@mui/material";
 
@@ -194,7 +195,7 @@ const Education = () => {
     );
 }
 
-const WorkExperience = () => {
+const WorkExperience = ({data}) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref });
     const y = useParallax(scrollYProgress, 300);
@@ -203,8 +204,8 @@ const WorkExperience = () => {
         <section className="sectionBodyExp card lg:card-side pt-32 lg:pt-0">
             <div ref={ref} className="rounded-2xl shadow-2xl sectionExpDiv h-[300px] md:h-[400px] " style={{ width: "50%", backgroundColor: "white" }}>
                 <img
-                    src={require("../assets/work/Karsun.png")}
-                    alt={"Karsun Solutions LLC."}
+                    src={require(`../assets/work/${data.image}.png`)}
+                    alt={data.image}
                     className="p-5 imgTag"
                     style={{ objectFit: "contain", borderRadius: 40 }}
                 />
@@ -213,15 +214,14 @@ const WorkExperience = () => {
                 className="card-body w-11/12 h-fit rounded-2xl glass lg:mr-5"
             >
                 <div>
-                    <p className="lg:text-5xl lg:font-semibold md:text-3xl md:font-medium text-xl" style={{ margin: 0 }}> Software Engineering Intern (Remote) </p>
-                    <p className="lg:text-2xl lg:font-medium md:text-xl md:font-medium text-base pt-3" style={{ margin: 0 }}> Karsun Solutions LLC. </p>
+                    <p className="lg:text-5xl lg:font-semibold md:text-3xl md:font-medium text-xl" style={{ margin: 0 }}> {data.position} </p>
+                    <p className="lg:text-2xl lg:font-medium md:text-xl md:font-medium text-base pt-3" style={{ margin: 0 }}> {data.name} </p>
                     <div className="divider" style={{ margin: 0 }} />
                     <ol style={{ listStyleType: 'disc' }}>
-                        <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Developed general-purpose software for an AI/ML project called Synthetic Data Portal that creates fictitious Personal Identifiable Information depending on user input into the user interface utilizing Synthetic Data Vault (SDV), the Faker library, and the Python programming language. </li>
-                        <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Created UI views with the App-Routing feature using React JS and AWS for the web application. </li>
-                        <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Utilized Amazon Web Services to help with project development and save production time by 35% by using S3 for
-                            storage, Cognito for authentication, and Amplify for UI components. </li>
-                        <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5"> Collaborated with a team of 5 and maintain constant communication to finish this project in 5 weeks. </li>
+                        <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> {data.line1} </li>
+                        <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> {data.line2} </li>
+                        <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> {data.line3} </li>
+                        <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5"> {data.line4} </li>
                     </ol>
                 </div>
             </motion.div>
@@ -254,7 +254,11 @@ const Experience = () => {
                     <Projects data={data} key={index} />
                 ))
                 : tabValue === 2 ?
-                    <Education /> : <WorkExperience />
+                    <Education /> : 
+                    WorkData.map((data, index) => (
+                        <WorkExperience data={data} key={index} />
+                    ))
+
             }
         </main>
     );
