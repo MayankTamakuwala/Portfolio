@@ -6,6 +6,11 @@
         "reference": "https://www.python.org"
       },
       {
+				"name": "TypeScript",
+				"image": "typescript",
+				"reference": "https://www.typescriptlang.org"
+			},
+      {
         "name": "JavaScript",
         "image": "javascript",
         "reference": "https://www.javascript.com"
@@ -79,38 +84,68 @@
       }
     ],
     [
+			{
+				"name": "RESTful API",
+				"image": "restAPI",
+				"reference": "https://www.redhat.com/en/topics/api/what-is-a-rest-api"
+			},
+			{
+				"name": "React.js",
+				"image": "react",
+				"reference": "https://react.dev"
+			},
+			{
+				"name": "Node.js",
+				"image": "nodeJS",
+				"reference": "https://nodejs.org/en"
+			},
+			{
+				"name": "Next.js",
+				"image": "next",
+				"reference": "https://nextjs.org"
+			},
+			{
+				"name": "Socket.io",
+				"image": "socket",
+				"reference": "https://socket.io"
+			},
       {
-        "name": "Socket.io",
-        "image": "socket",
-        "reference": "https://socket.io"
+        "name": "React Query",
+        "image": "reactQuery",
+        "reference": "https://tanstack.com/query/v3"
       },
-      {
-        "name": "NodeJS",
-        "image": "nodeJS",
-        "reference": "https://nodejs.org/en"
-      },
-      {
-        "name": "ReactJS",
-        "image": "react",
-        "reference": "https://react.dev"
-      },
-      {
-        "name": "RESTful API",
-        "image": "restAPI",
-        "reference": "https://www.redhat.com/en/topics/api/what-is-a-rest-api"
-      },
-      {
-        "name": "HTML",
-        "image": "HTML",
-        "reference": "https://html.spec.whatwg.org"
-      },
-      {
-        "name": "CSS",
-        "image": "CSS",
-        "reference": "https://www.w3.org/TR/CSS/#css"
-      }
-    ],
+			{
+				"name": "HTML",
+				"image": "HTML",
+				"reference": "https://html.spec.whatwg.org"
+			},
+			{
+				"name": "CSS",
+				"image": "CSS",
+				"reference": "https://www.w3.org/TR/CSS/#css"
+			}
+		],
     [
+      {
+        "name": "Jest",
+        "image": "jest",
+        "reference": "https://jestjs.io"
+      },
+      {
+        "name": "Modernizr",
+        "image": "modernizr",
+        "reference": "https://modernizr.com"
+      },
+      {
+        "name": "Handlebars",
+        "image": "handlebars",
+        "reference": "https://handlebarsjs.com"
+      },
+      {
+        "name": "Flask",
+        "image": "flask",
+        "reference": "https://flask.palletsprojects.com/en/3.0.x/"
+      },
       {
         "name": "SwiftUI",
         "image": "swiftUI",
@@ -148,6 +183,26 @@
       }
     ],
     [
+      {
+        "name": "Kubernetes",
+        "image": "kubernetes",
+        "reference": "https://kubernetes.io"
+      },
+      {
+        "name": "Postman",
+        "image": "postman",
+        "reference": "https://www.postman.com"
+      },
+      {
+        "name": "Docker",
+        "image": "docker",
+        "reference": "https://www.docker.com"
+      },
+      {
+        "name": "insomnia",
+        "image": "insomnia",
+        "reference": "https://insomnia.rest"
+      },
       {
         "name": "Matplotlib",
         "image": "matplotlib",
