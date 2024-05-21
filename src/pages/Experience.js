@@ -187,7 +187,7 @@ const Education = () => {
                     <ol style={{ listStyleType: 'disc' }}>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Bachelors of Science - Computer Science </li>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Graduation Date - December 2023 </li>
-                        <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5"> Relevant Coursework - Data Structures, Object-Oriented Programming, Algorithms, Database Fundamentals, Advanced C++, Introduction to Software Engineering, Software Management and Testing, Machine Learning </li>
+                        <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5"> Relevant Coursework - Data Structures & Algorithm, Machine Learning, Search Engine Technology, Database Fundamentals, OOP, Software Management and Testing, Advanced C++ </li>
                     </ol>
                 </div>
             </motion.div>
