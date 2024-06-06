@@ -18,8 +18,11 @@ const Form = () => {
         closeOnClick: true
     }
 
+    const [loading, setLoading] = useState(false)
+
     const handleSubmit = async(x) => {
         x.preventDefault();
+        setLoading(true)
         if (formValues.fname.length === 0 || formValues.lname.length === 0 || formValues.email.length === 0 || formValues.subject.length === 0 || formValues.content.length === 0){
             if (formValues.fname.length === 0) {
                 toast.warn("Enter your First Name", options)
@@ -38,46 +41,32 @@ const Form = () => {
             }
         }
         else{
-            // var validateEmail = await validate(
-            //     {
-            //         email: formValues.email,
-            //         validateRegex: true,
-            //         validateMx: true,
-            //         validateTypo: true,
-            //         validateDisposable: true,
-            //         validateSMTP: true,
-            //     }
-            // )
-            // if (validateEmail.valid){
-                var sendingEmail = await emailjs.send(
-                    "service_zopalck",
-                    "template_5f8nftd",
-                    {
-                        message: formValues.content,
-                        subject: formValues.subject,
-                        from_name: formValues.fname + formValues.lname,
-                        from_email: formValues.email
-                    },
-                    "45P9ZQPMf4F3SVAPp"
-                )
-                if (sendingEmail.status === 200 || sendingEmail.status === 201) {
-                    toast.success("Email Sent!", options)
-                    setFormValues({
-                        fname: "",
-                        lname: "",
-                        email: "",
-                        subject: "",
-                        content: "",
-                    });
-                }
-                else {
-                    toast.error("Something went wrong!", options)
-                }
-            // }
-            // else{
-            //     toast.info("Invalid Email Address!", options)
-            // }
+            var sendingEmail = await emailjs.send(
+                "service_zopalck",
+                "template_5f8nftd",
+                {
+                    message: formValues.content,
+                    subject: formValues.subject,
+                    from_name: formValues.fname + formValues.lname,
+                    from_email: formValues.email
+                },
+                "45P9ZQPMf4F3SVAPp"
+            )
+            if (sendingEmail.status === 200 || sendingEmail.status === 201) {
+                toast.success("Email Sent!", options)
+                setFormValues({
+                    fname: "",
+                    lname: "",
+                    email: "",
+                    subject: "",
+                    content: "",
+                });
+            }
+            else {
+                toast.error("Something went wrong!", options)
+            }
         }
+        setLoading(false)
     }
 
     const [formValues, setFormValues] = useState({
@@ -184,25 +173,32 @@ const Form = () => {
                 <button
                     type='submit'
                     className='sendButton px-3 py-3 sm:col-span-2 justify-center items-center sm:col-start-3'
+                    disabled={loading}
                 >
-                    <div className="svg-wrapper-1">
-                        <div className="svg-wrapper">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                width="24"
-                                height="24"
-                                className='sendSvg'
-                            >
-                                <path fill="none" d="M0 0h24v24H0z"></path>
-                                <path
-                                    fill="currentColor"
-                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                                ></path>
-                            </svg>
+                {loading ? <span className="loading loading-dots loading-lg" /> : 
+                (
+                    <>
+                        <div className="svg-wrapper-1">
+                            <div className="svg-wrapper">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                    height="24"
+                                    className='sendSvg'
+                                >
+                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                    <path
+                                        fill="currentColor"
+                                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                    ></path>
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <span className='sendSpan'>Send</span>
+                        <span className='sendSpan'>Send</span>
+                    </>
+                )
+                }
                 </button>
 
             </form>
