@@ -172,7 +172,7 @@ const Form = () => {
 
                 <button
                     type='submit'
-                    className='sendButton px-3 py-3 sm:col-span-2 justify-center items-center sm:col-start-3'
+                    className='sendButton px-3 py-3 sm:col-span-2 justify-center items-center sm:col-start-3 hover:disabled:cursor-not-allowed disabled:opacity-80'
                     disabled={loading}
                 >
                 {loading ? <span className="loading loading-dots loading-md" /> : 
