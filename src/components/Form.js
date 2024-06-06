@@ -175,7 +175,7 @@ const Form = () => {
                     className='sendButton px-3 py-3 sm:col-span-2 justify-center items-center sm:col-start-3'
                     disabled={loading}
                 >
-                {loading ? <span className="loading loading-dots loading-lg" /> : 
+                {loading ? <span className="loading loading-dots loading-md" /> : 
                 (
                     <>
                         <div className="svg-wrapper-1">
