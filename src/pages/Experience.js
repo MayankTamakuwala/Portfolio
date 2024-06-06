@@ -80,7 +80,7 @@ const Projects = ({ data }) => {
                             <tr>
                                 <td align="center">
                                     <img
-                                        src={require(`/src/assets/projects/${data.name}.png`)}
+                                        src={require(`/src/assets/projects/${data.name}.png`) ?? "https://placehold.co/600x400?text=Image+Coming+Soon"}
                                         alt={data.name}
                                         className={"w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-md " + (data.name === "CheaperEater" || data.name === "WordDangler" || data.name === "BeachMuse" ? "bg-white" : "")}
                                     />
