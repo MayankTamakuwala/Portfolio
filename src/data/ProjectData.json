@@ -34,14 +34,18 @@
 		"what": "Developed a search engine equipped to handle a wide array of search functionalities, ensuring precise and relevant results through advanced algorithms and techniques.",
 		"how": "Implemented tokenization, normalization, boolean and ranked retrieval, positional indexing, and supported large datasets with Variable-Byte Encoding and On-disk Indexing. Utilized text processing techniques like stemming, lemmatization, and stopword removal, supporting real-time indexing and multi-threaded query processing.",
 		"technology": [
-			"Python",
 			"Variable-Byte Encoding",
 			"On-disk Indexing",
 			"Stemming",
 			"Lemmatization"
 		],
 		"prog_lang": ["Python"],
-		"tags": ["Search Engine", "Information Retrieval", "Text Processing", "Machine Learning"]
+		"tags": [
+			"Search Engine",
+			"Information Retrieval",
+			"Text Processing",
+			"Machine Learning"
+		]
 	},
 	{
 		"name": "Mock'EM",
