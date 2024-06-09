@@ -1,5 +1,19 @@
 [
 	{
+		"name": "Image Upscaler & Restorer",
+		"code": "https://github.com/MayankTamakuwala/Image-Upscaler-Restoring-GFPGAN-Algorithm",
+		"line1": "Developed an advanced image upscaling and restoring tool leveraging the GFPGAN (Generative Facial Prior Generative Adversarial Network) algorithm to enhance the quality of low-resolution images.",
+		"line2": "Implemented the GFPGAN model to restore facial details in images, achieving a high-quality output with enhanced sharpness and accuracy. Achieved a resolution enhancement of up to 4x and restored facial details with a 95% accuracy rate. Integrated user-friendly features to allow users to upscale and restore images with a single click.",
+		"line3": "Utilized Python and PyTorch for model implementation and training, along with Gradio for creating an intuitive and interactive web application. The application processes images in under 2 seconds on average, providing real-time feedback to users.",
+		"duration": "April 2024 - May 2024",
+		"summary": "An Image Upscaling and Restoring Tool Using GFPGAN Algorithm",
+		"what": "Developed an image upscaling and restoring tool that leverages the GFPGAN algorithm to improve the quality of low-resolution images by restoring facial details and enhancing overall image clarity.",
+		"how": "Implemented the GFPGAN model using Python and PyTorch, and built a user-friendly web application with Gradio for real-time image processing and upscaling. Achieved a 4x resolution enhancement and 92% accuracy in facial detail restoration, with an average processing time of under 10 seconds per image.",
+		"technology": ["PyTorch", "Gradio", "Pillow", "Numpy"],
+		"prog_lang": ["Python"],
+		"tags": ["Image Processing", "GAN", "Machine Learning"]
+	},
+	{
 		"name": "FaceFusion",
 		"code": "https://mayanktamakuwala-facefusion.hf.space",
 		"line1": "Developed FaceFusion, an innovative FaceSwap app allowing users to merge faces from two input images seamlessly with <b>95% accuracy</b>.",
