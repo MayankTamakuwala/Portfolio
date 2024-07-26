@@ -183,11 +183,12 @@ const Education = () => {
                 <div>
                     <p className="lg:text-6xl lg:font-semibold md:text-3xl md:font-medium text-xl" style={{ margin: 0 }}> Long Beach State University </p>
                     <p className="lg:text-2xl lg:font-medium md:text-xl md:font-medium text-base pt-3" style={{ margin: 0 }}> College of Engineering </p>
+                    <p className="lg:text-xl lg:font-medium md:text-lg md:font-medium text-base pt-3" style={{ margin: 0 }}> Magna Cum Laude - 3.75/4.00 GPA </p>
                     <div className="divider" style={{ margin: 0 }} />
                     <ol style={{ listStyleType: 'disc' }}>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Bachelors of Science - Computer Science </li>
                         <li className="lg:mb-5 lg:text-lg md:text-sm text-xs"> Graduation Date - December 2023 </li>
-                        <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5"> Relevant Coursework - Data Structures & Algorithm, Machine Learning, Search Engine Technology, Database Fundamentals, OOP, Software Management and Testing, Advanced C++ </li>
+                        <li className="m-0 lg:text-lg md:text-sm text-xs pb-0.5"> Relevant Coursework - Data Structures & Algorithms, Machine Learning, Search Engine Technology, Database Fundamentals, OOP, Software Management and Testing, Advanced C++ </li>
                     </ol>
                 </div>
             </motion.div>
